@@ -10,11 +10,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="这是我自己在学习c++基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话第二节1.1234/*二维数组 总元素*/  sizeof ( arr ) ;/*  第一行元素  *,"> 
+    <meta name="description" content="这是我自己在学习c++基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话第二节1./*二维数组 总元素*/  sizeof ( arr ) ;
+/*  第一行元素  */  ,"> 
     <meta name="author" content="John Doe"> 
     <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -60,50 +63,110 @@
 
         </div>
         <div class="content markdown">
-            <h3 id="这是我自己在学习c-基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话"><a href="#这是我自己在学习c-基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话" class="headerlink" title="这是我自己在学习c++基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话"></a>这是我自己在学习c++基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话</h3><h2 id="第二节"><a href="#第二节" class="headerlink" title="第二节"></a><em>第二节</em></h2><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*二维数组 总元素*/</span>  <span class="keyword">sizeof</span> ( arr ) ;</span><br><span class="line"><span class="comment">/*  第一行元素  */</span>      <span class="keyword">sizeof</span> ( arr [<span class="number">0</span>] )  ;</span><br><span class="line"><span class="comment">/*     行数    */</span>      <span class="keyword">sizeof</span> ( arr ) / <span class="keyword">sizeof</span> ( arr [<span class="number">0</span>] )  </span><br><span class="line"><span class="comment">/*     列数    */</span>    <span class="keyword">sizeof</span> ( arr [<span class="number">0</span>]) / <span class="keyword">sizeof</span>( arr [<span class="number">0</span>] [<span class="number">0</span>] ) )</span><br></pre></td></tr></table></figure>
+            <h3 id="这是我自己在学习c-基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话"><a href="#这是我自己在学习c-基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话" class="headerlink" title="这是我自己在学习c++基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话"></a>这是我自己在学习c++基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话</h3><h2 id="第二节"><a href="#第二节" class="headerlink" title="第二节"></a><em>第二节</em></h2><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><pre><code class="c++">/*二维数组 总元素*/  sizeof ( arr ) ;
+/*  第一行元素  */      sizeof ( arr [0] )  ;
+/*     行数    */      sizeof ( arr ) / sizeof ( arr [0] )  
+/*     列数    */    sizeof ( arr [0]) / sizeof( arr [0] [0] ) )  </code></pre>
+<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><pre><code class="c++">/* 二维数组首地址  */  cout &lt;&lt; arr &lt;&lt; endl;  
+/*  第一行首地址  */ cout &lt;&lt; arr [0] &lt;&lt; endl; 
+/*第一个元素首地址 */ cout &lt;&lt; &amp; arr [0] [0] &lt;&lt; endl;  //  此三者相等三者相等     
+/*  第二行首地址  */    cout &lt;&lt; arr[1] &lt;&lt; endl;</code></pre>
+<h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><pre><code class="c++">/*指针就是地址*/   int *p; （p为指针变量） //使用时需要解引用  *p 即可 ( *p解引用）</code></pre>
+<h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4><pre><code class="c++">/*空指针:  用来给指针变量进行初始化，空指针不可以进行访问的*/ int *p = NULL;  
+//不可再将地址赋值给  p 输出  </code></pre>
+<h4 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h4><pre><code class="c++">const修饰指针    ---重点
 
+1）const修饰指针---常量指针 
 
+2）const修饰常量---指针常量 
 
-<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 二维数组首地址  */</span>  <span class="built_in">cout</span> &lt;&lt; arr &lt;&lt; <span class="built_in">endl</span>;  </span><br><span class="line"><span class="comment">/*  第一行首地址  */</span> <span class="built_in">cout</span> &lt;&lt; arr [<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line"><span class="comment">/*第一个元素首地址 */</span> <span class="built_in">cout</span> &lt;&lt; &amp; arr [<span class="number">0</span>] [<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">//  此三者相等三者相等     </span></span><br><span class="line"><span class="comment">/*  第二行首地址  */</span>    <span class="built_in">cout</span> &lt;&lt; arr[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+3）const既修饰指针又修饰常量  </code></pre>
+<h4 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h4><h4 id="—重点—"><a href="#—重点—" class="headerlink" title="—重点—"></a>—重点—</h4><pre><code class="c++">//1）常量指针  
+ const int  * p = &amp;a;       /*指针的指向可以修改，但是指针指向  的值不可修改 */
 
+//2）指针常量  
+ int * const p = &amp;a;        /*指针的指向不可以修改，指针的值可以修改        */
 
+//3）既修饰指针又修饰常量  
+ const int * const p = &amp;a;  /*指针的指向和指针的值都不可以修改             */
 
-<h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*指针就是地址*/</span>   <span class="keyword">int</span> *p; （p为指针变量） <span class="comment">//使用时需要解引用  *p 即可 ( *p解引用）</span></span><br></pre></td></tr></table></figure>
+//（如何记忆: const—常量 ，* p —指针     如何用：紧接着 const 的是p / *   紧跟着谁   谁不能操作）</code></pre>
+<h4 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h4><pre><code class="c++">int arr [10], int * p;  p = arr ;  cout &lt;&lt; *p;
+//（数组的名称为其的首地址)  </code></pre>
+<h4 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h4><h4 id="值传递，不能修改实参的值，只能修改形参的值。地址传递可以修改实参的值。"><a href="#值传递，不能修改实参的值，只能修改形参的值。地址传递可以修改实参的值。" class="headerlink" title="值传递，不能修改实参的值，只能修改形参的值。地址传递可以修改实参的值。"></a>值传递，不能修改实参的值，只能修改形参的值。地址传递可以修改实参的值。</h4><h4 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h4><h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><pre><code class="c++">struct student/****  自己创建的结构体类型为 student, 此类型的变量名字为s1, s2    ***/
+ {
+  string name;
 
+  int age;
 
+  int score;
 
-<h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*空指针:  用来给指针变量进行初始化，空指针不可以进行访问的*/</span> <span class="keyword">int</span> *p = <span class="literal">NULL</span>;  </span><br><span class="line"><span class="comment">//不可再将地址赋值给  p 输出</span></span><br></pre></td></tr></table></figure>
+  };
 
+//1  struct  student  s1;
 
+//2  struct student s2 = { };
 
-<h4 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span>修饰指针    ---重点</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>）<span class="keyword">const</span>修饰指针---常量指针 </span><br><span class="line"></span><br><span class="line"><span class="number">2</span>）<span class="keyword">const</span>修饰常量---指针常量 </span><br><span class="line"></span><br><span class="line"><span class="number">3</span>）<span class="keyword">const</span>既修饰指针又修饰常量</span><br></pre></td></tr></table></figure>
+//3  创建结构体时顺便创建结构体变量,通过.来访问结构体中的属性</code></pre>
+<h4 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h4><h4 id="结构体创建自定义类型过程中struct不能省略，但是创建变量的过程c-struct可以-省略"><a href="#结构体创建自定义类型过程中struct不能省略，但是创建变量的过程c-struct可以-省略" class="headerlink" title="结构体创建自定义类型过程中struct不能省略，但是创建变量的过程c++  struct可以  省略"></a>结构体创建自定义类型过程中struct不能省略，但是创建变量的过程c++  struct可以  省略</h4><h4 id="11"><a href="#11" class="headerlink" title="11."></a>11.</h4><pre><code class="c++"> //  结构体数组 struct 结构体名字 数组名字{个数}={ { }，{ } ，{ } }
 
+ //  结构体指针  利用-&gt;可以通过结构体来访问结构体的属性
 
+ student  s1  =  { &quot;李斯&quot;,56,99 };
 
-<h4 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h4><h4 id="—重点—"><a href="#—重点—" class="headerlink" title="—重点—"></a>—重点—</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1）常量指针  </span></span><br><span class="line"> <span class="keyword">const</span> <span class="keyword">int</span>  * p = &amp;a;       <span class="comment">/*指针的指向可以修改，但是指针指向  的值不可修改 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2）指针常量  </span></span><br><span class="line"> <span class="keyword">int</span> * <span class="keyword">const</span> p = &amp;a;        <span class="comment">/*指针的指向不可以修改，指针的值可以修改        */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3）既修饰指针又修饰常量  </span></span><br><span class="line"> <span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> p = &amp;a;  <span class="comment">/*指针的指向和指针的值都不可以修改             */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//（如何记忆: const—常量 ，* p —指针     如何用：紧接着 const 的是p / *   紧跟着谁   谁不能操作）</span></span><br></pre></td></tr></table></figure>
+ student * p  =  &amp;s1;
 
+ cout  &lt;&lt; &quot;姓名:&quot;   &lt;&lt;  p-&gt;name
 
+       &lt;&lt;  &quot;年龄:&quot;  &lt;&lt;  p-&gt;age
 
-<h4 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr [<span class="number">10</span>], <span class="keyword">int</span> * p;  p = arr ;  <span class="built_in">cout</span> &lt;&lt; *p;</span><br><span class="line"><span class="comment">//（数组的名称为其的首地址)</span></span><br></pre></td></tr></table></figure>
+       &lt;&lt;  &quot;分数&quot;   &lt;&lt;  p-&gt;score;</code></pre>
+<h4 id="12-结构体嵌套结构体"><a href="#12-结构体嵌套结构体" class="headerlink" title="12.结构体嵌套结构体"></a>12.结构体嵌套结构体</h4><pre><code class="c++"> struct student
+ {
 
+  string  name;
 
+  int  scroe;
+ };
 
-<h4 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h4><h4 id="值传递，不能修改实参的值，只能修改形参的值。地址传递可以修改实参的值。"><a href="#值传递，不能修改实参的值，只能修改形参的值。地址传递可以修改实参的值。" class="headerlink" title="值传递，不能修改实参的值，只能修改形参的值。地址传递可以修改实参的值。"></a>值传递，不能修改实参的值，只能修改形参的值。地址传递可以修改实参的值。</h4><h4 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h4><h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>/****  自己创建的结构体类型为 <span class="title">student</span>, 此类型的变量名字为<span class="title">s1</span>, <span class="title">s2</span>    ***/</span></span><br><span class="line"><span class="class"> &#123;</span></span><br><span class="line">  <span class="built_in">string</span> name;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> score;</span><br><span class="line"></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//1  struct  student  s1;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2  struct student s2 = &#123; &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3  创建结构体时顺便创建结构体变量,通过.来访问结构体中的属性</span></span><br></pre></td></tr></table></figure>
+ struct teacher
+{
 
+   int  id;
 
+   string  name;
 
-<h4 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h4><h4 id="结构体创建自定义类型过程中struct不能省略，但是创建变量的过程c-struct可以-省略"><a href="#结构体创建自定义类型过程中struct不能省略，但是创建变量的过程c-struct可以-省略" class="headerlink" title="结构体创建自定义类型过程中struct不能省略，但是创建变量的过程c++  struct可以  省略"></a>结构体创建自定义类型过程中struct不能省略，但是创建变量的过程c++  struct可以  省略</h4><h4 id="11"><a href="#11" class="headerlink" title="11."></a>11.</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  结构体数组 struct 结构体名字 数组名字&#123;个数&#125;=&#123; &#123; &#125;，&#123; &#125; ，&#123; &#125; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//  结构体指针  利用-&gt;可以通过结构体来访问结构体的属性</span></span><br><span class="line"></span><br><span class="line">student  s1  =  &#123; <span class="string">"李斯"</span>,<span class="number">56</span>,<span class="number">99</span> &#125;;</span><br><span class="line"></span><br><span class="line">student * p  =  &amp;s1;</span><br><span class="line"></span><br><span class="line"><span class="built_in">cout</span>  &lt;&lt; <span class="string">"姓名:"</span>   &lt;&lt;  p-&gt;name</span><br><span class="line"></span><br><span class="line">      &lt;&lt;  <span class="string">"年龄:"</span>  &lt;&lt;  p-&gt;age</span><br><span class="line"></span><br><span class="line">      &lt;&lt;  <span class="string">"分数"</span>   &lt;&lt;  p-&gt;score;</span><br></pre></td></tr></table></figure>
+   int  age;
 
+   struct   student  s1;//学生  s1
+};
 
+    teacher  t;
 
-<h4 id="12-结构体嵌套结构体"><a href="#12-结构体嵌套结构体" class="headerlink" title="12.结构体嵌套结构体"></a>12.结构体嵌套结构体</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">struct</span> <span class="title">student</span></span></span><br><span class="line"><span class="class"> &#123;</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">string</span>  name;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span>  scroe;</span><br><span class="line"> &#125;;</span><br><span class="line"></span><br><span class="line"> <span class="class"><span class="keyword">struct</span> <span class="title">teacher</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span>  id;</span><br><span class="line"></span><br><span class="line">   <span class="built_in">string</span>  name;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span>  age;</span><br><span class="line"></span><br><span class="line">   <span class="class"><span class="keyword">struct</span>   <span class="title">student</span>  <span class="title">s1</span>;</span><span class="comment">//学生  s1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">    teacher  t;</span><br><span class="line"></span><br><span class="line">    t.id  = <span class="number">10086</span>;</span><br><span class="line"></span><br><span class="line">    t.name  =  <span class="string">"老王"</span>;</span><br><span class="line"></span><br><span class="line">    t.age  = <span class="number">58</span>;</span><br><span class="line"></span><br><span class="line">    t.s1. name  =  <span class="string">"小王"</span>;</span><br><span class="line"></span><br><span class="line">    t.s1.scroe  =  <span class="number">99</span>;</span><br><span class="line"></span><br><span class="line">    teacher * p  =  &amp;t;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span>  &lt;&lt;  <span class="string">"老师姓名："</span>  &lt;&lt;  p-&gt;name</span><br><span class="line"></span><br><span class="line">          &lt;&lt;  <span class="string">"老师工号: "</span>  &lt;&lt;  p-&gt;id</span><br><span class="line"></span><br><span class="line">          &lt;&lt;  <span class="string">"老师年龄: "</span> &lt;&lt;  p-&gt;age</span><br><span class="line"></span><br><span class="line">          &lt;&lt;  <span class="string">"老师的学生名字: "</span> &lt;&lt;  p-&gt;s1.name</span><br><span class="line"></span><br><span class="line">          &lt;&lt;  <span class="string">"老师的学生分数: "</span> &lt;&lt;  p-&gt;s1.scroe;</span><br></pre></td></tr></table></figure>
+    t.id  = 10086;
 
+    t.name  =  &quot;老王&quot;;
 
+    t.age  = 58;
 
-<h4 id="13-结构体中使用const来防止误操作"><a href="#13-结构体中使用const来防止误操作" class="headerlink" title="13.  结构体中使用const来防止误操作"></a>13.  结构体中使用const来防止误操作</h4><h4 id="14"><a href="#14" class="headerlink" title="14."></a>14.</h4><h4 id="—重点—-1"><a href="#—重点—-1" class="headerlink" title="—重点—"></a>—重点—</h4><h4 id="main里面调用函数，形参相当于把参数复制了一遍，增大了储存空间和代码量。将函数的形参变为指针，可以大大减少内存的占用（指针不会复制数据，其只是进行地址传递）"><a href="#main里面调用函数，形参相当于把参数复制了一遍，增大了储存空间和代码量。将函数的形参变为指针，可以大大减少内存的占用（指针不会复制数据，其只是进行地址传递）" class="headerlink" title="main里面调用函数，形参相当于把参数复制了一遍，增大了储存空间和代码量。将函数的形参变为指针，可以大大减少内存的占用（指针不会复制数据，其只是进行地址传递）"></a>main里面调用函数，形参相当于把参数复制了一遍，增大了储存空间和代码量。将函数的形参变为指针，可以大大减少内存的占用（指针不会复制数据，其只是进行地址传递）</h4><h4 id="15"><a href="#15" class="headerlink" title="15."></a>15.</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">system( “ pause ” );  <span class="comment">//请按任意键继续 </span></span><br><span class="line"></span><br><span class="line">   system( “ cls ” ); <span class="comment">//清屏操作</span></span><br></pre></td></tr></table></figure>
+    t.s1. name  =  &quot;小王&quot;;
 
+    t.s1.scroe  =  99;
 
+    teacher * p  =  &amp;t;
 
+    cout  &lt;&lt;  &quot;老师姓名：&quot;  &lt;&lt;  p-&gt;name
+
+          &lt;&lt;  &quot;老师工号: &quot;  &lt;&lt;  p-&gt;id
+
+          &lt;&lt;  &quot;老师年龄: &quot; &lt;&lt;  p-&gt;age
+
+          &lt;&lt;  &quot;老师的学生名字: &quot; &lt;&lt;  p-&gt;s1.name
+
+          &lt;&lt;  &quot;老师的学生分数: &quot; &lt;&lt;  p-&gt;s1.scroe;</code></pre>
+<h4 id="13-结构体中使用const来防止误操作"><a href="#13-结构体中使用const来防止误操作" class="headerlink" title="13.  结构体中使用const来防止误操作"></a>13.  结构体中使用const来防止误操作</h4><h4 id="14"><a href="#14" class="headerlink" title="14."></a>14.</h4><h4 id="—重点—-1"><a href="#—重点—-1" class="headerlink" title="—重点—"></a>—重点—</h4><h4 id="main里面调用函数，形参相当于把参数复制了一遍，增大了储存空间和代码量。将函数的形参变为指针，可以大大减少内存的占用（指针不会复制数据，其只是进行地址传递）"><a href="#main里面调用函数，形参相当于把参数复制了一遍，增大了储存空间和代码量。将函数的形参变为指针，可以大大减少内存的占用（指针不会复制数据，其只是进行地址传递）" class="headerlink" title="main里面调用函数，形参相当于把参数复制了一遍，增大了储存空间和代码量。将函数的形参变为指针，可以大大减少内存的占用（指针不会复制数据，其只是进行地址传递）"></a>main里面调用函数，形参相当于把参数复制了一遍，增大了储存空间和代码量。将函数的形参变为指针，可以大大减少内存的占用（指针不会复制数据，其只是进行地址传递）</h4><h4 id="15"><a href="#15" class="headerlink" title="15."></a>15.</h4><pre><code class="c++"> system( “ pause ” );  //请按任意键继续 
+
+    system( “ cls ” ); //清屏操作</code></pre>
 <hr>
 <h4 id="未完待续…"><a href="#未完待续…" class="headerlink" title="未完待续…"></a>未完待续…</h4>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
@@ -126,14 +189,14 @@
         </div>
         
     <div id='gitalk-container' class="comment link"
-		data-enable='false'
+		data-enable='true'
         data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d='false'
+        data-ci='6ad24f2be059b1d2fb20'
+        data-cs='ee483db219a5b74594455a4ad59c2a81ed2b6717'
+        data-r='hao-brother.github.io'
+        data-o='hao-brother'
+        data-a='hao-brother'
+        data-d='true'
     >查看评论</div>
 
 
@@ -145,6 +208,8 @@
     </div>
 </div>
 </body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
 
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>

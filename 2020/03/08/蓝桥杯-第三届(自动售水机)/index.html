@@ -16,6 +16,8 @@
     <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -62,42 +64,318 @@
         </div>
         <div class="content markdown">
             <h3 id="这是我自己在学习蓝桥杯过程中总结的一些知识，希望对今后的学习和备战蓝桥的同学能够提供一些帮助吧。"><a href="#这是我自己在学习蓝桥杯过程中总结的一些知识，希望对今后的学习和备战蓝桥的同学能够提供一些帮助吧。" class="headerlink" title="这是我自己在学习蓝桥杯过程中总结的一些知识，希望对今后的学习和备战蓝桥的同学能够提供一些帮助吧。"></a>这是我自己在学习蓝桥杯过程中总结的一些知识，希望对今后的学习和备战蓝桥的同学能够提供一些帮助吧。</h3><h2 id="蓝桥杯-第三届-自动售水机"><a href="#蓝桥杯-第三届-自动售水机" class="headerlink" title="蓝桥杯-第三届(自动售水机)"></a>蓝桥杯-第三届(自动售水机)</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><h3 id="试题要求如下"><a href="#试题要求如下" class="headerlink" title="试题要求如下"></a>试题要求如下</h3><p><img src="https://gitee.com/two_finger_meditation/bed/raw/master/img/GDM73@JC9HG0T4Q~MXH93B7.png" alt=""></p>
-<h3 id="2-题目要点分析"><a href="#2-题目要点分析" class="headerlink" title="2.题目要点分析"></a>2.题目要点分析</h3><h4 id="1-上电后各部分要初始化-关闭蜂咛器、数码管、led灯、继电器-，并且数码管要显示题目要求初始的数-含格式"><a href="#1-上电后各部分要初始化-关闭蜂咛器、数码管、led灯、继电器-，并且数码管要显示题目要求初始的数-含格式" class="headerlink" title="1)  上电后各部分要初始化(关闭蜂咛器、数码管、led灯、继电器)，并且数码管要显示题目要求初始的数(含格式)"></a>1)  上电后各部分要初始化(关闭蜂咛器、数码管、led灯、继电器)，并且数码管要显示题目要求初始的数(含格式)</h4><h4 id="2）按下-S7-清屏开始计数-计数器中断-流水显示，S6停止流水计数并且计算显示出流水价格"><a href="#2）按下-S7-清屏开始计数-计数器中断-流水显示，S6停止流水计数并且计算显示出流水价格" class="headerlink" title="2）按下 S7 清屏开始计数(计数器中断)流水显示，S6停止流水计数并且计算显示出流水价格"></a>2）按下 S7 清屏开始计数(计数器中断)流水显示，S6停止流水计数并且计算显示出流水价格</h4><h4 id="3-通过光敏电阻读取环境的亮度，当其发生改变时，做出不同的响应"><a href="#3-通过光敏电阻读取环境的亮度，当其发生改变时，做出不同的响应" class="headerlink" title="3)  通过光敏电阻读取环境的亮度，当其发生改变时，做出不同的响应"></a>3)  通过光敏电阻读取环境的亮度，当其发生改变时，做出不同的响应</h4><h4 id="4）掌握IIC"><a href="#4）掌握IIC" class="headerlink" title="4）掌握IIC"></a>4）掌握IIC</h4><h3 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3.注意事项"></a>3.注意事项</h3><h4 id="1）数码管小数的显示，需要重新计算数码管段选数组-tab-spot-，都加上h，使其显示出小数点"><a href="#1）数码管小数的显示，需要重新计算数码管段选数组-tab-spot-，都加上h，使其显示出小数点" class="headerlink" title="1）数码管小数的显示，需要重新计算数码管段选数组 tab_spot[] ，都加上h，使其显示出小数点"></a>1）数码管小数的显示，需要重新计算数码管段选数组 tab_spot[] ，都加上h，使其显示出小数点</h4><h4 id="2）S7按键不会改变流水的状态，唯有S6可以改变-S7作用只有一个，就是清屏开始流水计数"><a href="#2）S7按键不会改变流水的状态，唯有S6可以改变-S7作用只有一个，就是清屏开始流水计数" class="headerlink" title="2）S7按键不会改变流水的状态，唯有S6可以改变, S7作用只有一个，就是清屏开始流水计数"></a>2）S7按键不会改变流水的状态，唯有S6可以改变, S7作用只有一个，就是清屏开始流水计数</h4><h4 id="3）通过流水量计算出价格这方法要注意"><a href="#3）通过流水量计算出价格这方法要注意" class="headerlink" title="3）通过流水量计算出价格这方法要注意"></a>3）通过流水量计算出价格这方法要注意</h4><h4 id="4）光敏电阻读取数据与显示的转换要注意（-IIC-写0x90-读0x91"><a href="#4）光敏电阻读取数据与显示的转换要注意（-IIC-写0x90-读0x91" class="headerlink" title="4）光敏电阻读取数据与显示的转换要注意（ IIC   写0x90, 读0x91)"></a>4）光敏电阻读取数据与显示的转换要注意（ IIC   写0x90, 读0x91)</h4><h4 id="5-引用头文件并且定义无符号类型"><a href="#5-引用头文件并且定义无符号类型" class="headerlink" title="5)  引用头文件并且定义无符号类型"></a>5)  引用头文件并且定义无符号类型</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"STC15f2k60S2.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"intrins.h"</span>   <span class="comment">// 引用头文件  调用iic里面的延时函数 _nop_()</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> uchar unsigned char</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> uint unsigned int</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-题目要点分析"><a href="#2-题目要点分析" class="headerlink" title="2.题目要点分析"></a>2.题目要点分析</h3><h4 id="1-上电后各部分要初始化-关闭蜂咛器、数码管、led灯、继电器-，并且数码管要显示题目要求初始的数-含格式"><a href="#1-上电后各部分要初始化-关闭蜂咛器、数码管、led灯、继电器-，并且数码管要显示题目要求初始的数-含格式" class="headerlink" title="1)  上电后各部分要初始化(关闭蜂咛器、数码管、led灯、继电器)，并且数码管要显示题目要求初始的数(含格式)"></a>1)  上电后各部分要初始化(关闭蜂咛器、数码管、led灯、继电器)，并且数码管要显示题目要求初始的数(含格式)</h4><h4 id="2）按下-S7-清屏开始计数-计数器中断-流水显示，S6停止流水计数并且计算显示出流水价格"><a href="#2）按下-S7-清屏开始计数-计数器中断-流水显示，S6停止流水计数并且计算显示出流水价格" class="headerlink" title="2）按下 S7 清屏开始计数(计数器中断)流水显示，S6停止流水计数并且计算显示出流水价格"></a>2）按下 S7 清屏开始计数(计数器中断)流水显示，S6停止流水计数并且计算显示出流水价格</h4><h4 id="3-通过光敏电阻读取环境的亮度，当其发生改变时，做出不同的响应"><a href="#3-通过光敏电阻读取环境的亮度，当其发生改变时，做出不同的响应" class="headerlink" title="3)  通过光敏电阻读取环境的亮度，当其发生改变时，做出不同的响应"></a>3)  通过光敏电阻读取环境的亮度，当其发生改变时，做出不同的响应</h4><h4 id="4）掌握IIC"><a href="#4）掌握IIC" class="headerlink" title="4）掌握IIC"></a>4）掌握IIC</h4><h3 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3.注意事项"></a>3.注意事项</h3><h4 id="1）数码管小数的显示，需要重新计算数码管段选数组-tab-spot-，都加上h，使其显示出小数点"><a href="#1）数码管小数的显示，需要重新计算数码管段选数组-tab-spot-，都加上h，使其显示出小数点" class="headerlink" title="1）数码管小数的显示，需要重新计算数码管段选数组 tab_spot[] ，都加上h，使其显示出小数点"></a>1）数码管小数的显示，需要重新计算数码管段选数组 tab_spot[] ，都加上h，使其显示出小数点</h4><h4 id="2）S7按键不会改变流水的状态，唯有S6可以改变-S7作用只有一个，就是清屏开始流水计数"><a href="#2）S7按键不会改变流水的状态，唯有S6可以改变-S7作用只有一个，就是清屏开始流水计数" class="headerlink" title="2）S7按键不会改变流水的状态，唯有S6可以改变, S7作用只有一个，就是清屏开始流水计数"></a>2）S7按键不会改变流水的状态，唯有S6可以改变, S7作用只有一个，就是清屏开始流水计数</h4><h4 id="3）通过流水量计算出价格这方法要注意"><a href="#3）通过流水量计算出价格这方法要注意" class="headerlink" title="3）通过流水量计算出价格这方法要注意"></a>3）通过流水量计算出价格这方法要注意</h4><h4 id="4）光敏电阻读取数据与显示的转换要注意（-IIC-写0x90-读0x91"><a href="#4）光敏电阻读取数据与显示的转换要注意（-IIC-写0x90-读0x91" class="headerlink" title="4）光敏电阻读取数据与显示的转换要注意（ IIC   写0x90, 读0x91)"></a>4）光敏电阻读取数据与显示的转换要注意（ IIC   写0x90, 读0x91)</h4><h4 id="5-引用头文件并且定义无符号类型"><a href="#5-引用头文件并且定义无符号类型" class="headerlink" title="5)  引用头文件并且定义无符号类型"></a>5)  引用头文件并且定义无符号类型</h4><pre><code class="c">#include &quot;STC15f2k60S2.h&quot;
+#include &quot;intrins.h&quot;   // 引用头文件  调用iic里面的延时函数 _nop_()
+
+#define uchar unsigned char
+#define uint unsigned int</code></pre>
+<h3 id="4-代码实现"><a href="#4-代码实现" class="headerlink" title="4.代码实现"></a>4.代码实现</h3><h5 id="首先是进行初始化"><a href="#首先是进行初始化" class="headerlink" title="首先是进行初始化"></a>首先是进行初始化</h5><pre><code class="c">void allinit()  // 初始化
+{
+    P2=0XA0;
+    P0=0X00;
+
+    P2=0X80;
+    P0=0XFF;
+
+    P2=0XC0;
+    P0=0XFF;
+
+    P2=0XFF;
+    P0=0XFF;
+}</code></pre>
+<h5 id="延时函数"><a href="#延时函数" class="headerlink" title="延时函数"></a>延时函数</h5><pre><code class="c">void delayms(uchar a)
+{
+    uint b;
+    for(;a&gt;0;a--)
+    {
+    for(b=845;b&gt;0;b--)
+        {
+        }
+    }
+}</code></pre>
+<h5 id="数码管显示-双重—-正常不加小数点和加小数点"><a href="#数码管显示-双重—-正常不加小数点和加小数点" class="headerlink" title="数码管显示(双重—-正常不加小数点和加小数点)"></a>数码管显示(双重—-正常不加小数点和加小数点)</h5><pre><code class="c">uchar tab[]={0xc0,
+0xf9,0xa4,0xB0,0x99,0x92,0x82,0xf8,0x80,0x90,
+0xff};  // 不加小数点
+
+uchar tab_spot[]={0x40,
+0x79,0x24,0x30,0x19,0x12,0x02,0x78,0x00,0x10,
+0xff};  // 加上小数点的
 
 
+void display(uchar channel,uchar num)  // 不加小数点段选的数码管显示
+{
+    P2=0XC0;
+    P0=0X01&lt;&lt;channel;
 
-<h3 id="4-代码实现"><a href="#4-代码实现" class="headerlink" title="4.代码实现"></a>4.代码实现</h3><h5 id="首先是进行初始化"><a href="#首先是进行初始化" class="headerlink" title="首先是进行初始化"></a>首先是进行初始化</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">allinit</span><span class="params">()</span>  <span class="comment">// 初始化</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	P2=<span class="number">0XA0</span>;</span><br><span class="line">	P0=<span class="number">0X00</span>;</span><br><span class="line">	</span><br><span class="line">	P2=<span class="number">0X80</span>;</span><br><span class="line">	P0=<span class="number">0XFF</span>;</span><br><span class="line"></span><br><span class="line">	P2=<span class="number">0XC0</span>;</span><br><span class="line">	P0=<span class="number">0XFF</span>;</span><br><span class="line">	</span><br><span class="line">	P2=<span class="number">0XFF</span>;</span><br><span class="line">	P0=<span class="number">0XFF</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    P2=0XE0;
+    P0=tab[num];
+    delayms(2);
+}
 
+void display_spot(uchar channel,uchar num)   // 加小数点段选的数码管显示
+{
+    P2=0XC0;
+    P0=0X01&lt;&lt;channel;
 
+    P2=0XE0;
+    P0=tab_spot[num];
+    delayms(2);
+}</code></pre>
+<h5 id="题目要求的数码管显示格式"><a href="#题目要求的数码管显示格式" class="headerlink" title="题目要求的数码管显示格式"></a>题目要求的数码管显示格式</h5><pre><code class="c">uchar yi,er,san,si,wu,liu,qi,ba;  // 全局变量
 
-<h5 id="延时函数"><a href="#延时函数" class="headerlink" title="延时函数"></a>延时函数</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delayms</span><span class="params">(uchar a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	uint b;</span><br><span class="line">	<span class="keyword">for</span>(;a&gt;<span class="number">0</span>;a--)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">for</span>(b=<span class="number">845</span>;b&gt;<span class="number">0</span>;b--)</span><br><span class="line">		&#123;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+void display_SMG()
+{
+    display(0,yi);
+    display_spot(1,er);
+    display(2,san);
+    display(3,si);
 
+    display(4,wu);
+    display_spot(5,liu);
+    display(6,qi);
+    display(7,ba);
+}</code></pre>
+<h5 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h5><pre><code class="c">void Timer0Init(void)    // 5毫秒 来源stc定时器计算器 波特率11.0592 定时器0 16位自动重载
+{
+    AUXR |= 0x80;        
+    TMOD &amp;= 0xF0;    
+    TL0 = 0x00;        
+    TH0 = 0x28;        
+    TF0 = 0;        
+    TR0 = 1;        
+}
 
+uint aa=0;             // 三个全局变量  进行时间、金钱计算
+uint bb=0;
+uint money=0;
 
-<h5 id="数码管显示-双重—-正常不加小数点和加小数点"><a href="#数码管显示-双重—-正常不加小数点和加小数点" class="headerlink" title="数码管显示(双重—-正常不加小数点和加小数点)"></a>数码管显示(双重—-正常不加小数点和加小数点)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">uchar tab[]=&#123;<span class="number">0xc0</span>,</span><br><span class="line"><span class="number">0xf9</span>,<span class="number">0xa4</span>,<span class="number">0xB0</span>,<span class="number">0x99</span>,<span class="number">0x92</span>,<span class="number">0x82</span>,<span class="number">0xf8</span>,<span class="number">0x80</span>,<span class="number">0x90</span>,</span><br><span class="line"><span class="number">0xff</span>&#125;;  <span class="comment">// 不加小数点</span></span><br><span class="line"></span><br><span class="line">uchar tab_spot[]=&#123;<span class="number">0x40</span>,</span><br><span class="line"><span class="number">0x79</span>,<span class="number">0x24</span>,<span class="number">0x30</span>,<span class="number">0x19</span>,<span class="number">0x12</span>,<span class="number">0x02</span>,<span class="number">0x78</span>,<span class="number">0x00</span>,<span class="number">0x10</span>,</span><br><span class="line"><span class="number">0xff</span>&#125;;  <span class="comment">// 加上小数点的</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">(uchar channel,uchar num)</span>  <span class="comment">// 不加小数点段选的数码管显示</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	P2=<span class="number">0XC0</span>;</span><br><span class="line">	P0=<span class="number">0X01</span>&lt;&lt;channel;</span><br><span class="line"></span><br><span class="line">	P2=<span class="number">0XE0</span>;</span><br><span class="line">	P0=tab[num];</span><br><span class="line">	delayms(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">display_spot</span><span class="params">(uchar channel,uchar num)</span>   <span class="comment">// 加小数点段选的数码管显示</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	P2=<span class="number">0XC0</span>;</span><br><span class="line">	P0=<span class="number">0X01</span>&lt;&lt;channel;</span><br><span class="line"></span><br><span class="line">	P2=<span class="number">0XE0</span>;</span><br><span class="line">	P0=tab_spot[num];</span><br><span class="line">	delayms(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+void time0 () interrupt 1  // 定时器中断服务函数 1
+{
+        aa++;             
+        if(aa==20)        // 100毫秒
+        {
+        bb++;             // 100毫秒=10毫升 (相当于数码管最后一位)
+        aa=0;
 
+        ba=bb%10;
+        qi=bb%100/10;
+        liu=bb%1000/100;
+        wu=bb/1000;    
+        }
 
+    if(bb==9999)
+        {
+        bb=0;            
+        money=bb*0.5;     // 进行金钱转化
+        ba=money%10;
+        qi=money%100/10;
+        liu=money%1000/100;
+        wu=money/1000;    
+        }    
+}</code></pre>
+<h5 id="按键操作"><a href="#按键操作" class="headerlink" title="按键操作"></a>按键操作</h5><pre><code class="c">void start()              // S7按下 开启
+{
+  wu=liu=qi=ba=0;         // 使得开始按按键时 数码管后四位清零
 
-<h5 id="题目要求的数码管显示格式"><a href="#题目要求的数码管显示格式" class="headerlink" title="题目要求的数码管显示格式"></a>题目要求的数码管显示格式</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">uchar yi,er,san,si,wu,liu,qi,ba;  <span class="comment">// 全局变量</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">display_SMG</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">display</span>(<span class="number">0</span>,yi);</span><br><span class="line">	display_spot(<span class="number">1</span>,er);</span><br><span class="line">	<span class="built_in">display</span>(<span class="number">2</span>,san);</span><br><span class="line">	<span class="built_in">display</span>(<span class="number">3</span>,si);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">display</span>(<span class="number">4</span>,wu);</span><br><span class="line">	display_spot(<span class="number">5</span>,liu);</span><br><span class="line">	<span class="built_in">display</span>(<span class="number">6</span>,qi);</span><br><span class="line">	<span class="built_in">display</span>(<span class="number">7</span>,ba);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    P2=0XA0;              // 开启继电器
+    P0=0X10;
 
+    ET0=1;                // 开启定时器
+    EA=1;
 
+}
 
-<h5 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Timer0Init</span><span class="params">(<span class="keyword">void</span>)</span>	<span class="comment">// 5毫秒 来源stc定时器计算器 波特率11.0592 定时器0 16位自动重载</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	AUXR |= <span class="number">0x80</span>;		</span><br><span class="line">	TMOD &amp;= <span class="number">0xF0</span>;	</span><br><span class="line">	TL0 = <span class="number">0x00</span>;		</span><br><span class="line">	TH0 = <span class="number">0x28</span>;		</span><br><span class="line">	TF0 = <span class="number">0</span>;		</span><br><span class="line">	TR0 = <span class="number">1</span>;		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">uint aa=<span class="number">0</span>;             <span class="comment">// 三个全局变量  进行时间、金钱计算</span></span><br><span class="line">uint bb=<span class="number">0</span>;</span><br><span class="line">uint money=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">time0</span> <span class="params">()</span> interrupt 1  <span class="comment">// 定时器中断服务函数 1</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		aa++;             </span><br><span class="line">		<span class="keyword">if</span>(aa==<span class="number">20</span>)        <span class="comment">// 100毫秒</span></span><br><span class="line">		&#123;</span><br><span class="line">		bb++;             <span class="comment">// 100毫秒=10毫升 (相当于数码管最后一位)</span></span><br><span class="line">		aa=<span class="number">0</span>;</span><br><span class="line">		 </span><br><span class="line">		ba=bb%<span class="number">10</span>;</span><br><span class="line">		qi=bb%<span class="number">100</span>/<span class="number">10</span>;</span><br><span class="line">		liu=bb%<span class="number">1000</span>/<span class="number">100</span>;</span><br><span class="line">		wu=bb/<span class="number">1000</span>;	</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">if</span>(bb==<span class="number">9999</span>)</span><br><span class="line">		&#123;</span><br><span class="line">		bb=<span class="number">0</span>;            </span><br><span class="line">		money=bb*<span class="number">0.5</span>;     <span class="comment">// 进行金钱转化</span></span><br><span class="line">		ba=money%<span class="number">10</span>;</span><br><span class="line">		qi=money%<span class="number">100</span>/<span class="number">10</span>;</span><br><span class="line">		liu=money%<span class="number">1000</span>/<span class="number">100</span>;</span><br><span class="line">		wu=money/<span class="number">1000</span>;	</span><br><span class="line">		&#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+void off()                // S6按下 关闭
+{
 
+    P2=0XA0;              // 关闭继电器
+    P0=0X00;
 
+    EA=0;                 // 关闭定时器
+    ET0=0;
 
-<h5 id="按键操作"><a href="#按键操作" class="headerlink" title="按键操作"></a>按键操作</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">start</span><span class="params">()</span>              <span class="comment">// S7按下 开启</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  wu=liu=qi=ba=<span class="number">0</span>;         <span class="comment">// 使得开始按按键时 数码管后四位清零</span></span><br><span class="line"> </span><br><span class="line">	P2=<span class="number">0XA0</span>;              <span class="comment">// 开启继电器</span></span><br><span class="line">	P0=<span class="number">0X10</span>;</span><br><span class="line">	</span><br><span class="line">	ET0=<span class="number">1</span>;                <span class="comment">// 开启定时器</span></span><br><span class="line">	EA=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">off</span><span class="params">()</span>                <span class="comment">// S6按下 关闭</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	P2=<span class="number">0XA0</span>;              <span class="comment">// 关闭继电器</span></span><br><span class="line">	P0=<span class="number">0X00</span>;</span><br><span class="line"></span><br><span class="line">	EA=<span class="number">0</span>;                 <span class="comment">// 关闭定时器</span></span><br><span class="line">	ET0=<span class="number">0</span>;</span><br><span class="line">	       </span><br><span class="line">	money=bb*<span class="number">0.5</span>;         <span class="comment">// 关闭时自动显示价钱</span></span><br><span class="line">	ba=money%<span class="number">10</span>;</span><br><span class="line">	qi=money%<span class="number">100</span>/<span class="number">10</span>;</span><br><span class="line">	liu=money%<span class="number">1000</span>/<span class="number">100</span>;</span><br><span class="line">	wu=money/<span class="number">1000</span>;	</span><br><span class="line">	</span><br><span class="line">	bb=<span class="number">0</span>;                 <span class="comment">// 确保下次开始计数时 从0开始</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">keyscan</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span>(P30==<span class="number">0</span>)</span><br><span class="line"> &#123;</span><br><span class="line"> delayms(<span class="number">2</span>);</span><br><span class="line">	 <span class="keyword">if</span>(P30==<span class="number">0</span>)</span><br><span class="line">	 &#123;</span><br><span class="line">	  start();</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">while</span>(!P30);</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> <span class="keyword">if</span>(P31==<span class="number">0</span>)</span><br><span class="line"> &#123;</span><br><span class="line"> delayms(<span class="number">2</span>);</span><br><span class="line">	 <span class="keyword">if</span>(P31==<span class="number">0</span>)</span><br><span class="line">	 &#123;</span><br><span class="line">	  off();</span><br><span class="line">	 &#125;</span><br><span class="line">	  <span class="keyword">while</span>(!P31);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    money=bb*0.5;         // 关闭时自动显示价钱
+    ba=money%10;
+    qi=money%100/10;
+    liu=money%1000/100;
+    wu=money/1000;    
 
+    bb=0;                 // 确保下次开始计数时 从0开始
+}
 
+void keyscan()
+{
+if(P30==0)
+ {
+ delayms(2);
+     if(P30==0)
+     {
+      start();
+     }
+     while(!P30);
+ }
 
-<h5 id="实现光敏电阻的各项功能-要利用给的IIC文件夹，稍加修改即可"><a href="#实现光敏电阻的各项功能-要利用给的IIC文件夹，稍加修改即可" class="headerlink" title="实现光敏电阻的各项功能 (要利用给的IIC文件夹，稍加修改即可)"></a>实现光敏电阻的各项功能 (要利用给的IIC文件夹，稍加修改即可)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*********************************************/</span>  <span class="comment">// 以下函数在官方数据手册提供</span></span><br><span class="line"><span class="comment">/*********************************************/</span>  <span class="comment">// _nop_() 需要引入头文件 "intrins.h"</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> somenop &#123;_nop_();_nop_();_nop_();_nop_();_nop_();&#125;    <span class="comment">// 这为官方给的51</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> somenop &#123;_nop_();_nop_();_nop_();_nop_();_nop_(); <span class="comment">// 15的延时大概为51的8倍</span></span></span><br><span class="line">_nop_();_nop_();_nop_();_nop_();_nop_();</span><br><span class="line">_nop_();_nop_();_nop_();_nop_();_nop_();</span><br><span class="line">_nop_();_nop_();_nop_();_nop_();_nop_();</span><br><span class="line">_nop_();_nop_();_nop_();_nop_();_nop_();</span><br><span class="line">_nop_();_nop_();_nop_();_nop_();_nop_();</span><br><span class="line">_nop_();_nop_();_nop_();_nop_();_nop_();</span><br><span class="line">_nop_();_nop_();_nop_();_nop_();_nop_(); &#125;</span><br><span class="line">                                 </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SlaveAddrW 0xA0   <span class="comment">// 写</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SlaveAddrR 0xA1   <span class="comment">// 读</span></span></span><br><span class="line"></span><br><span class="line">sbit SDA = P2^<span class="number">1</span>;  <span class="comment">/* 数据线 */</span></span><br><span class="line">sbit SCL = P2^<span class="number">0</span>;  <span class="comment">/* 时钟线 */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">IIC_Start</span><span class="params">(<span class="keyword">void</span>)</span>  <span class="comment">// 启动条件</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SDA = <span class="number">1</span>;</span><br><span class="line">	SCL = <span class="number">1</span>;</span><br><span class="line">	somenop;</span><br><span class="line">	SDA = <span class="number">0</span>;</span><br><span class="line">	somenop;</span><br><span class="line">	SCL = <span class="number">0</span>;	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">IIC_Stop</span><span class="params">(<span class="keyword">void</span>)</span>   <span class="comment">// 停止条件</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SDA = <span class="number">0</span>;</span><br><span class="line">	SCL = <span class="number">1</span>;</span><br><span class="line">	somenop;</span><br><span class="line">	SDA = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">bit</span> <span class="title">IIC_WaitAck</span><span class="params">(<span class="keyword">void</span>)</span>  <span class="comment">// 等待应答</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SDA = <span class="number">1</span>;</span><br><span class="line">	somenop;</span><br><span class="line">	SCL = <span class="number">1</span>;</span><br><span class="line">	somenop;</span><br><span class="line">	<span class="keyword">if</span>(SDA)    </span><br><span class="line">	&#123;   </span><br><span class="line">		SCL = <span class="number">0</span>;</span><br><span class="line">		IIC_Stop();</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>  </span><br><span class="line">	&#123; </span><br><span class="line">		SCL = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">IIC_SendByte</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">char</span> byt)</span> <span class="comment">// 通过iic发送数据</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)</span><br><span class="line">	&#123;   </span><br><span class="line">		<span class="keyword">if</span>(byt&amp;<span class="number">0x80</span>) </span><br><span class="line">		&#123;	</span><br><span class="line">			SDA = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">		&#123;</span><br><span class="line">			SDA = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		somenop;</span><br><span class="line">		SCL = <span class="number">1</span>;</span><br><span class="line">		byt &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">		somenop;</span><br><span class="line">		SCL = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">char</span> <span class="title">IIC_RecByte</span><span class="params">(<span class="keyword">void</span>)</span>  <span class="comment">// 接收iic数据</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> da;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> i;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)</span><br><span class="line">	&#123;   </span><br><span class="line">		SCL = <span class="number">1</span>;</span><br><span class="line">		somenop;</span><br><span class="line">		da &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(SDA) </span><br><span class="line">		da |= <span class="number">0x01</span>;</span><br><span class="line">		SCL = <span class="number">0</span>;</span><br><span class="line">		somenop;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> da;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/***********************************/</span>   <span class="comment">//以下的函数需要自己根据官方提供的函数来编写</span></span><br><span class="line"><span class="function">uchar <span class="title">iic_read</span><span class="params">(uchar add)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    uchar temp;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/******************/</span></span><br><span class="line">    IIC_Start();</span><br><span class="line">    </span><br><span class="line">    IIC_SendByte(<span class="number">0x90</span>);</span><br><span class="line">    IIC_WaitAck();</span><br><span class="line">    </span><br><span class="line">    IIC_SendByte(add);</span><br><span class="line">    IIC_WaitAck();</span><br><span class="line">    </span><br><span class="line">    IIC_Stop();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*****************/</span></span><br><span class="line">    IIC_Start(<span class="number">0x91</span>);</span><br><span class="line">    </span><br><span class="line">    IIC_SendByte(<span class="number">0x91</span>);</span><br><span class="line">    IIC_WaitAck();</span><br><span class="line">    </span><br><span class="line">    temp=IIC_RecByte();</span><br><span class="line">    IIC_WaitAck();</span><br><span class="line">    </span><br><span class="line">    IIC_Stop();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/****************/</span></span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ if(P31==0)
+ {
+ delayms(2);
+     if(P31==0)
+     {
+      off();
+     }
+      while(!P31);
+ }
 
+}</code></pre>
+<h5 id="实现光敏电阻的各项功能-要利用给的IIC文件夹，稍加修改即可"><a href="#实现光敏电阻的各项功能-要利用给的IIC文件夹，稍加修改即可" class="headerlink" title="实现光敏电阻的各项功能 (要利用给的IIC文件夹，稍加修改即可)"></a>实现光敏电阻的各项功能 (要利用给的IIC文件夹，稍加修改即可)</h5><pre><code class="c">/*********************************************/  // 以下函数在官方数据手册提供
+/*********************************************/  // _nop_() 需要引入头文件 &quot;intrins.h&quot;
+#define somenop {_nop_();_nop_();_nop_();_nop_();_nop_();}    // 这为官方给的51
+#define somenop {_nop_();_nop_();_nop_();_nop_();_nop_(); // 15的延时大概为51的8倍
+_nop_();_nop_();_nop_();_nop_();_nop_();
+_nop_();_nop_();_nop_();_nop_();_nop_();
+_nop_();_nop_();_nop_();_nop_();_nop_();
+_nop_();_nop_();_nop_();_nop_();_nop_();
+_nop_();_nop_();_nop_();_nop_();_nop_();
+_nop_();_nop_();_nop_();_nop_();_nop_();
+_nop_();_nop_();_nop_();_nop_();_nop_(); }
 
+#define SlaveAddrW 0xA0   // 写
+#define SlaveAddrR 0xA1   // 读
 
-<h6 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	uchar guangmin;   <span class="comment">// 记录数码管的值</span></span><br><span class="line">	all_init();       <span class="comment">// 初始化，关闭蜂咛器，继电器之类</span></span><br><span class="line">	Timer0Init();     <span class="comment">// 中断初始化</span></span><br><span class="line"></span><br><span class="line">	yi=<span class="number">10</span>,er=<span class="number">0</span>,san=<span class="number">5</span>,si=<span class="number">0</span>,wu=<span class="number">0</span>,liu=<span class="number">1</span>,qi=<span class="number">0</span>,ba=<span class="number">0</span>;  <span class="comment">// 开始数码管的显示</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		display_SMG();   <span class="comment">// 初始化数码管</span></span><br><span class="line">		keyscan();       <span class="comment">// 读取按键反馈回来的全局变量 yi ~ ba 的值，并且控制其他模块</span></span><br><span class="line">			</span><br><span class="line">		guangmin=iic_read(<span class="number">0x01</span>); <span class="comment">//  !!!  iic读取光敏电阻的值并进行转换</span></span><br><span class="line">	   <span class="keyword">if</span>(guangmin&lt;<span class="number">64</span>) <span class="comment">// !!!</span></span><br><span class="line">	  &#123;</span><br><span class="line">		P0=<span class="number">0XFF</span>;      <span class="comment">// 避免其小灯的干扰</span></span><br><span class="line">		P2=<span class="number">0X80</span>;</span><br><span class="line">		P00=<span class="number">0</span>;        <span class="comment">// 点亮</span></span><br><span class="line">	  &#125;</span><br><span class="line">	  <span class="keyword">else</span></span><br><span class="line">	  &#123;</span><br><span class="line">		P2=<span class="number">0X80</span>;</span><br><span class="line">		P0=<span class="number">0XFF</span>;</span><br><span class="line">	  &#125;					</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+sbit SDA = P2^1;  /* 数据线 */
+sbit SCL = P2^0;  /* 时钟线 */
 
+void IIC_Start(void)  // 启动条件
+{
+    SDA = 1;
+    SCL = 1;
+    somenop;
+    SDA = 0;
+    somenop;
+    SCL = 0;    
+}
 
+void IIC_Stop(void)   // 停止条件
+{
+    SDA = 0;
+    SCL = 1;
+    somenop;
+    SDA = 1;
+}
 
+bit IIC_WaitAck(void)  // 等待应答
+{
+    SDA = 1;
+    somenop;
+    SCL = 1;
+    somenop;
+    if(SDA)    
+    {   
+        SCL = 0;
+        IIC_Stop();
+        return 0;
+    }
+    else  
+    { 
+        SCL = 0;
+        return 1;
+    }
+}
+
+void IIC_SendByte(unsigned char byt) // 通过iic发送数据
+{
+    unsigned char i;
+    for(i=0;i&lt;8;i++)
+    {   
+        if(byt&amp;0x80) 
+        {    
+            SDA = 1;
+        }
+        else 
+        {
+            SDA = 0;
+        }
+        somenop;
+        SCL = 1;
+        byt &lt;&lt;= 1;
+        somenop;
+        SCL = 0;
+    }
+}
+
+unsigned char IIC_RecByte(void)  // 接收iic数据
+{
+    unsigned char da;
+    unsigned char i;
+
+    for(i=0;i&lt;8;i++)
+    {   
+        SCL = 1;
+        somenop;
+        da &lt;&lt;= 1;
+        if(SDA) 
+        da |= 0x01;
+        SCL = 0;
+        somenop;
+    }
+    return da;
+}
+
+/***********************************/   //以下的函数需要自己根据官方提供的函数来编写
+uchar iic_read(uchar add)
+{
+    uchar temp;
+
+    /******************/
+    IIC_Start();
+
+    IIC_SendByte(0x90);
+    IIC_WaitAck();
+
+    IIC_SendByte(add);
+    IIC_WaitAck();
+
+    IIC_Stop();
+
+    /*****************/
+    IIC_Start(0x91);
+
+    IIC_SendByte(0x91);
+    IIC_WaitAck();
+
+    temp=IIC_RecByte();
+    IIC_WaitAck();
+
+    IIC_Stop();
+
+    /****************/
+    return temp;
+}</code></pre>
+<h6 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h6><pre><code class="c">void main()
+{
+    uchar guangmin;   // 记录数码管的值
+    all_init();       // 初始化，关闭蜂咛器，继电器之类
+    Timer0Init();     // 中断初始化
+
+    yi=10,er=0,san=5,si=0,wu=0,liu=1,qi=0,ba=0;  // 开始数码管的显示
+    while(1)
+    {
+        display_SMG();   // 初始化数码管
+        keyscan();       // 读取按键反馈回来的全局变量 yi ~ ba 的值，并且控制其他模块
+
+        guangmin=iic_read(0x01); //  !!!  iic读取光敏电阻的值并进行转换
+       if(guangmin&lt;64) // !!!
+      {
+        P0=0XFF;      // 避免其小灯的干扰
+        P2=0X80;
+        P00=0;        // 点亮
+      }
+      else
+      {
+        P2=0X80;
+        P0=0XFF;
+      }                    
+   }
+}</code></pre>
 <h3 id="5-完整的代码参考-仅供学习"><a href="#5-完整的代码参考-仅供学习" class="headerlink" title="5.完整的代码参考(仅供学习)"></a>5.完整的代码参考(仅供学习)</h3><h5 id="链接：https-pan-baidu-com-s-138PEwdj5GlsxOEjPLrFB4Q"><a href="#链接：https-pan-baidu-com-s-138PEwdj5GlsxOEjPLrFB4Q" class="headerlink" title="链接：https://pan.baidu.com/s/138PEwdj5GlsxOEjPLrFB4Q"></a>链接：<a href="https://pan.baidu.com/s/138PEwdj5GlsxOEjPLrFB4Q" target="_blank" rel="noopener">https://pan.baidu.com/s/138PEwdj5GlsxOEjPLrFB4Q</a></h5><h5 id="提取码：6kt5"><a href="#提取码：6kt5" class="headerlink" title="提取码：6kt5"></a>提取码：6kt5</h5><hr>
 <h3 id="注-本文为原创，未经允许，禁止转载！"><a href="#注-本文为原创，未经允许，禁止转载！" class="headerlink" title="注: 本文为原创，未经允许，禁止转载！"></a>注: 本文为原创，未经允许，禁止转载！</h3>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
@@ -120,14 +398,14 @@
         </div>
         
     <div id='gitalk-container' class="comment link"
-		data-enable='false'
+		data-enable='true'
         data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d='false'
+        data-ci='6ad24f2be059b1d2fb20'
+        data-cs='ee483db219a5b74594455a4ad59c2a81ed2b6717'
+        data-r='hao-brother.github.io'
+        data-o='hao-brother'
+        data-a='hao-brother'
+        data-d='true'
     >查看评论</div>
 
 
@@ -139,6 +417,8 @@
     </div>
 </div>
 </body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
 
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
