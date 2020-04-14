@@ -10,9 +10,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="这是我自己在看视频过程中记录的Linux基础的小知识点。ctrl + shift + =      // 为放大字体
+    <meta name="description" content="这是我自己在看视频过程中记录的Linux基础的小知识点。1.ctrl + shift + =      // 为放大字体
 ctrl + -              // 为缩小字体
-ctrl + al,"> 
+ctrl + ,"> 
     <meta name="author" content="John Doe"> 
     <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -64,14 +64,14 @@ ctrl + al,">
 
         </div>
         <div class="content markdown">
-            <h3 id="这是我自己在看视频过程中记录的Linux基础的小知识点。"><a href="#这是我自己在看视频过程中记录的Linux基础的小知识点。" class="headerlink" title="这是我自己在看视频过程中记录的Linux基础的小知识点。"></a>这是我自己在看视频过程中记录的Linux基础的小知识点。</h3><pre><code class="python">ctrl + shift + =      // 为放大字体
+            <h3 id="这是我自己在看视频过程中记录的Linux基础的小知识点。"><a href="#这是我自己在看视频过程中记录的Linux基础的小知识点。" class="headerlink" title="这是我自己在看视频过程中记录的Linux基础的小知识点。"></a>这是我自己在看视频过程中记录的Linux基础的小知识点。</h3><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><pre><code class="python">ctrl + shift + =      // 为放大字体
 ctrl + -              // 为缩小字体
 ctrl + alt + t        // 为打开终端
 clean                 // 清屏ls
 tab                   // 自动补全目录</code></pre>
-<h5 id="以下直接回车即可"><a href="#以下直接回车即可" class="headerlink" title="/***/// 以下直接回车即可"></a>/<strong><strong><strong>***</strong></strong></strong>/// 以下直接回车即可</h5><pre><code class="python">ls      // 查看当前文件夹下内容
+<h4 id="2-以下直接回车即可"><a href="#2-以下直接回车即可" class="headerlink" title="2. 以下直接回车即可"></a>2. 以下直接回车即可</h4><pre><code class="python">ls      // 查看当前文件夹下内容
 pwd     // 查看当前所在文件夹</code></pre>
-<h5 id="以下需要加上对象，再回车"><a href="#以下需要加上对象，再回车" class="headerlink" title="/***/// 以下需要加上对象，再回车"></a>/<strong><strong><strong>***</strong></strong></strong>/// 以下需要加上对象，再回车</h5><pre><code class="python">cd        // 切换文件夹(注意空格pwd)
+<h4 id="3-以下需要加上对象，再回车"><a href="#3-以下需要加上对象，再回车" class="headerlink" title="3. 以下需要加上对象，再回车"></a>3. 以下需要加上对象，再回车</h4><pre><code class="python">cd        // 切换文件夹(注意空格pwd)
 touch       // 如果文件不存在，新建文件
 mkdir     // 创建文件夹(目录)
 mkdir -p a/b/c/d   //(创建a文件，a包含了b，b包含了c，c包含了d)
@@ -79,27 +79,27 @@ rm        // 删除指定文件(不能删除文件夹（目录）)
 rm -d     // 文件夹名 (删除文件夹(目录))
 rm  -r    // 文件夹名 (删除文件夹(单目录和多目录))
 rm -f     // (强力删除，不提示任何信息)</code></pre>
-<h5 id="命令查询两种方法"><a href="#命令查询两种方法" class="headerlink" title="/***/// 命令查询两种方法"></a>/<strong><strong><strong>***</strong></strong></strong>/// 命令查询两种方法</h5><pre><code class="python">command --help   
+<h4 id="4-命令查询两种方法"><a href="#4-命令查询两种方法" class="headerlink" title="4. 命令查询两种方法"></a>4. 命令查询两种方法</h4><pre><code class="python">command --help   
 man command </code></pre>
-<h5 id="文件和目录常用命令"><a href="#文件和目录常用命令" class="headerlink" title="/***/// 文件和目录常用命令"></a>/<strong><strong><strong>***</strong></strong></strong>/// 文件和目录常用命令</h5><pre><code class="python">ls       // 查看目录内容
+<h4 id="5-文件和目录常用命令"><a href="#5-文件和目录常用命令" class="headerlink" title="5. 文件和目录常用命令"></a>5. 文件和目录常用命令</h4><pre><code class="python">ls       // 查看目录内容
 cd       // 切换目录
 touch    // 创建文件(当文件不存在时创建，如果已存在，则修改日期)
 rm mkdir // 删除
 cp       // 拷贝 
 mv       // 移动</code></pre>
-<h5 id="隐藏文件以-开头"><a href="#隐藏文件以-开头" class="headerlink" title="/***/// 隐藏文件以 .开头"></a>/<strong><strong><strong>***</strong></strong></strong>/// 隐藏文件以 .开头</h5><pre><code class="python">touch .123.txt  // (以ls不可看见，ls -a(目录全部)才可见)
+<h4 id="6-隐藏文件以-开头"><a href="#6-隐藏文件以-开头" class="headerlink" title="6. 隐藏文件以 .开头"></a>6. 隐藏文件以 .开头</h4><pre><code class="python">touch .123.txt  // (以ls不可看见，ls -a(目录全部)才可见)
                 // 删除时 rm .123.txt
                 // . 代表为当前目录  
                 // .. 代表上一级目录  例如(cd ..  为返回上一级目录)</code></pre>
-<h5 id="ls常用的命令"><a href="#ls常用的命令" class="headerlink" title="/***///  ls常用的命令"></a>/<strong><strong><strong>***</strong></strong></strong>///  ls常用的命令</h5><pre><code class="python">ls -a           // 显示全部文件(包括隐藏的文件)
+<h4 id="7-ls常用的命令"><a href="#7-ls常用的命令" class="headerlink" title="7.  ls常用的命令"></a>7.  ls常用的命令</h4><pre><code class="python">ls -a           // 显示全部文件(包括隐藏的文件)
 ls -l           // 显示文件的详细信息
 ls -l -h        // 人性化的显示文件的详细信息(ls -lh与前边那种书写相同)</code></pre>
-<h5 id="进制"><a href="#进制" class="headerlink" title="/***/// 进制"></a>/<strong><strong><strong><strong>***</strong></strong></strong></strong>/// 进制</h5><pre><code class="python">B   字节  一般为8位二进制数
+<h4 id="8-进制"><a href="#8-进制" class="headerlink" title="8. 进制"></a>8. 进制</h4><pre><code class="python">B   字节  一般为8位二进制数
 K   1K = 1024 B
 M   1M = 1024 B
 G   1G = 1024 M
 T   1T = 1024 G  </code></pre>
-<h5 id="通配符"><a href="#通配符" class="headerlink" title="/***/// 通配符"></a>/<strong><strong><strong><strong>***</strong></strong></strong></strong>/// 通配符</h5><pre><code class="python">.               // 代表任意个数个字符
+<h4 id="9-通配符"><a href="#9-通配符" class="headerlink" title="9. 通配符"></a>9. 通配符</h4><pre><code class="python">.               // 代表任意个数个字符
 ？             // 代表任意一个字符 至少一个
 []              // 代表可以匹配字符组中任意一个
 [abc]           // 匹配 a b c 中任意一个
@@ -108,13 +108,13 @@ T   1T = 1024 G  </code></pre>
 ls 1*         // (显示以1开头的文件) 
 ls *1.txt     // (显示以1.txt结尾的文件)
 ls [1-3].txt</code></pre>
-<h5 id="cd-拓展"><a href="#cd-拓展" class="headerlink" title="/***/// cd 拓展"></a>/<strong><strong><strong><strong>***</strong></strong></strong></strong>/// cd 拓展</h5><pre><code class="python">cd            // 切换到当前用户的主目录(/home/用户目录)
+<h4 id="cd-拓展"><a href="#cd-拓展" class="headerlink" title="/***/// cd 拓展"></a>/<strong><strong><strong><strong>***</strong></strong></strong></strong>/// cd 拓展</h4><pre><code class="python">cd            // 切换到当前用户的主目录(/home/用户目录)
 cd ~           // 切换到当前用户的主目录(/home/用户目录)
 cd .          // 保留在当前目录
 cd ..         // 切换到上一级目录
 cd -          // 切换最近两次目录</code></pre>
-<h5 id="相对路径与绝对路径"><a href="#相对路径与绝对路径" class="headerlink" title="/***/// 相对路径与绝对路径"></a>/<strong><strong><strong><strong>***</strong></strong></strong></strong>/// 相对路径与绝对路径</h5><pre><code class="python">绝对路径   cd /home/zdaxian/Desktop
-相对路径   最前边不是/或- 便是相对目录所在目录位置</code></pre>
+<h4 id="相对路径与绝对路径"><a href="#相对路径与绝对路径" class="headerlink" title="/***/// 相对路径与绝对路径"></a>/<strong><strong><strong><strong>***</strong></strong></strong></strong>/// 相对路径与绝对路径</h4><pre><code class="python">cd /home/zdaxian/Desktop    // 绝对路径 
+                            // 相对路径  最前边不是/或- 便是相对目录所在目录位置</code></pre>
 <hr>
 <h4 id="未完待续…"><a href="#未完待续…" class="headerlink" title="未完待续…"></a>未完待续…</h4>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
