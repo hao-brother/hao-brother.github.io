@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>STM32知识点(一) - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="以前学习STM32感觉掌握的不牢固，很多知识都遗忘了，所以趁着疫情在家重新学习下，顺便记录下容易混的知识，和大家一起分享。1. GPIO — 指的是通用输入和输出端口引脚与GPIO区别?（1）引脚有,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">STM32知识点(一)</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">STM32知识点(一)</h1>
+        <div class="stuff">
+            <span>五月 28, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h3 id="以前学习STM32感觉掌握的不牢固，很多知识都遗忘了，所以趁着疫情在家重新学习下，顺便记录下容易混的知识，和大家一起分享。"><a href="#以前学习STM32感觉掌握的不牢固，很多知识都遗忘了，所以趁着疫情在家重新学习下，顺便记录下容易混的知识，和大家一起分享。" class="headerlink" title="以前学习STM32感觉掌握的不牢固，很多知识都遗忘了，所以趁着疫情在家重新学习下，顺便记录下容易混的知识，和大家一起分享。"></a>以前学习STM32感觉掌握的不牢固，很多知识都遗忘了，所以趁着疫情在家重新学习下，顺便记录下容易混的知识，和大家一起分享。</h3><h4 id="1-GPIO-—-指的是通用输入和输出端口"><a href="#1-GPIO-—-指的是通用输入和输出端口" class="headerlink" title="1. GPIO — 指的是通用输入和输出端口"></a>1. GPIO — 指的是通用输入和输出端口</h4><h4 id="引脚与GPIO区别"><a href="#引脚与GPIO区别" class="headerlink" title="引脚与GPIO区别?"></a>引脚与GPIO区别?</h4><h5 id="（1）引脚有的是做GPIO用，有的是做电源引脚，复位引脚，晶振引脚等"><a href="#（1）引脚有的是做GPIO用，有的是做电源引脚，复位引脚，晶振引脚等" class="headerlink" title="（1）引脚有的是做GPIO用，有的是做电源引脚，复位引脚，晶振引脚等"></a>（1）引脚有的是做GPIO用，有的是做电源引脚，复位引脚，晶振引脚等</h5><h5 id="（2）引脚可以复用，可以做GPIO，也可以做其他的作用-例如做串口…"><a href="#（2）引脚可以复用，可以做GPIO，也可以做其他的作用-例如做串口…" class="headerlink" title="（2）引脚可以复用，可以做GPIO，也可以做其他的作用(例如做串口…)"></a>（2）引脚可以复用，可以做GPIO，也可以做其他的作用(例如做串口…)</h5><h4 id="2-GPIO的八种工作模式-—-重点"><a href="#2-GPIO的八种工作模式-—-重点" class="headerlink" title="2. GPIO的八种工作模式 — 重点"></a>2. GPIO的八种工作模式 — 重点</h4><h4 id="四种输入："><a href="#四种输入：" class="headerlink" title="四种输入："></a>四种输入：</h4><h5 id="浮空输入-芯片读取的引脚电平状态不确定，取决于GPIO外部电平，可以做KEY识别"><a href="#浮空输入-芯片读取的引脚电平状态不确定，取决于GPIO外部电平，可以做KEY识别" class="headerlink" title="浮空输入: 芯片读取的引脚电平状态不确定，取决于GPIO外部电平，可以做KEY识别"></a>浮空输入: 芯片读取的引脚电平状态不确定，取决于GPIO外部电平，可以做KEY识别</h5><h5 id="上拉输入-IO内带上拉电阻输入"><a href="#上拉输入-IO内带上拉电阻输入" class="headerlink" title="上拉输入: IO内带上拉电阻输入"></a>上拉输入: IO内带上拉电阻输入</h5><h5 id="下拉输入-IO内带下拉电阻输入"><a href="#下拉输入-IO内带下拉电阻输入" class="headerlink" title="下拉输入: IO内带下拉电阻输入"></a>下拉输入: IO内带下拉电阻输入</h5><h5 id="模拟输入-ADC模拟输入，不像其他输入模式只有0和1，模拟输入模式可以读取到很细微变化的值，ADC"><a href="#模拟输入-ADC模拟输入，不像其他输入模式只有0和1，模拟输入模式可以读取到很细微变化的值，ADC" class="headerlink" title="模拟输入: ADC模拟输入，不像其他输入模式只有0和1，模拟输入模式可以读取到很细微变化的值，ADC"></a>模拟输入: ADC模拟输入，不像其他输入模式只有0和1，模拟输入模式可以读取到很细微变化的值，ADC</h5><h4 id="四种输出-以下四个均含上下拉"><a href="#四种输出-以下四个均含上下拉" class="headerlink" title="四种输出(以下四个均含上下拉):"></a>四种输出(以下四个均含上下拉):</h4><h5 id="开漏输出-只能输出低电平，外部不接上拉电阻时，所以要想输出高电平必须要外接上拉电阻"><a href="#开漏输出-只能输出低电平，外部不接上拉电阻时，所以要想输出高电平必须要外接上拉电阻" class="headerlink" title="开漏输出: 只能输出低电平，外部不接上拉电阻时，所以要想输出高电平必须要外接上拉电阻"></a>开漏输出: 只能输出低电平，外部不接上拉电阻时，所以要想输出高电平必须要外接上拉电阻</h5><pre><code class="c++"> GPIO_MODE_OUTPUT_PP   // 开漏输出</code></pre>
+<h5 id="开漏复用输出-理解为GPIO第二功能IO输出0-接GND，-IO输出1-接VCC，读输入值是未知的"><a href="#开漏复用输出-理解为GPIO第二功能IO输出0-接GND，-IO输出1-接VCC，读输入值是未知的" class="headerlink" title="开漏复用输出: 理解为GPIO第二功能IO输出0-接GND， IO输出1 -接VCC，读输入值是未知的"></a>开漏复用输出: 理解为GPIO第二功能IO输出0-接GND， IO输出1 -接VCC，读输入值是未知的</h5><h5 id="推挽式输出-可以输出强高低电平，连接数字其间。例如IIC-SCL-SDA"><a href="#推挽式输出-可以输出强高低电平，连接数字其间。例如IIC-SCL-SDA" class="headerlink" title="推挽式输出: 可以输出强高低电平，连接数字其间。例如IIC (SCL,SDA)"></a>推挽式输出: 可以输出强高低电平，连接数字其间。例如IIC (SCL,SDA)</h5><pre><code class="c++"> GPIO_MODE_OUTPUT_OD   // 推挽式输出</code></pre>
+<h5 id="推挽式复用输出-理解为GPIO第二功能-例如串口通信TX-SPI等"><a href="#推挽式复用输出-理解为GPIO第二功能-例如串口通信TX-SPI等" class="headerlink" title="推挽式复用输出: 理解为GPIO第二功能,例如串口通信TX,SPI等"></a>推挽式复用输出: 理解为GPIO第二功能,例如串口通信TX,SPI等</h5><h4 id="3-八种模式对应Hal函数"><a href="#3-八种模式对应Hal函数" class="headerlink" title="3.八种模式对应Hal函数"></a>3.八种模式对应Hal函数</h4><pre><code class="c++">（1）GPIO_Mode_IN_FLOATING   // 浮空输入
+（2）GPIO_Mode_IPU            // 上拉输入
+（3）GPIO_Mode_IPD           // 下拉输入
+（4）GPIO_Mode_AIN           // 模拟输入 
+
+（5）GPIO_Mode_Out_OD        // 开漏输出
+（6）GPIO_Mode_AF_OD         // 开漏复用输出
+（7）GPIO_Mode_Out_PP        // 推挽输出
+（8）GPIO_Mode_AF_PP         // 复用推挽输出</code></pre>
+<h4 id="4-注意-—-重点"><a href="#4-注意-—-重点" class="headerlink" title="4. 注意 — 重点"></a>4. 注意 — 重点</h4><h5 id="当引脚高有效的我们就下拉，低有效的话我们就上拉-增强其控制能力"><a href="#当引脚高有效的我们就下拉，低有效的话我们就上拉-增强其控制能力" class="headerlink" title="当引脚高有效的我们就下拉，低有效的话我们就上拉,增强其控制能力"></a>当引脚高有效的我们就下拉，低有效的话我们就上拉,增强其控制能力</h5><hr>
+<h3 id="后续将继续补充与完善…"><a href="#后续将继续补充与完善…" class="headerlink" title="后续将继续补充与完善…"></a>后续将继续补充与完善…</h3>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/438900437.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://link.hhtjim.com/163/438900437.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci='6ad24f2be059b1d2fb20'
+        data-cs='ee483db219a5b74594455a4ad59c2a81ed2b6717'
+        data-r='hao-brother.github.io'
+        data-o='hao-brother'
+        data-a='hao-brother'
+        data-d='true'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

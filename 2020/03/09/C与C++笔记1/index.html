@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>c与c++知识点(一) - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="这是我自己在学习c++基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话第一节1.int a; sizeof(int) = sizeof(a); ---求所储存的字节
+2.f,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">c与c++知识点(一)</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">c与c++知识点(一)</h1>
+        <div class="stuff">
+            <span>三月 09, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h3 id="这是我自己在学习c-基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话"><a href="#这是我自己在学习c-基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话" class="headerlink" title="这是我自己在学习c++基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话"></a>这是我自己在学习c++基础的过程中，顺便复习了下C语言，然后总结的一些小小知识点。—写在前面的话</h3><h2 id="第一节"><a href="#第一节" class="headerlink" title="第一节"></a><em>第一节</em></h2><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><pre><code class="c++">int a; sizeof(int) = sizeof(a); ---求所储存的字节</code></pre>
+<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><pre><code class="c++">float aa = &#39;A&#39;  cout &lt;&lt; (int)aa &lt;&lt; endl; //输出A的数值(强制转化为 int) 注意格式</code></pre>
+<h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><pre><code class="c++">float f2 = 3e2  //3*10^2  float f3 = 3e-2  //3*0.1^2</code></pre>
+<h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4><h4 id="bool-真或假-bool-flag-false-true-0-1-—除了0为假，其余都为真"><a href="#bool-真或假-bool-flag-false-true-0-1-—除了0为假，其余都为真" class="headerlink" title="bool 真或假  bool flag = false/true(0/1); —除了0为假，其余都为真"></a>bool 真或假  bool flag = false/true(0/1); —除了0为假，其余都为真</h4><h4 id="5-字符串"><a href="#5-字符串" class="headerlink" title="5.字符串"></a>5.字符串</h4><h4 id="nbsp-nbsp-1"><a href="#nbsp-nbsp-1" class="headerlink" title="&nbsp;&nbsp;(1)"></a>&nbsp;&nbsp;(1)</h4><pre><code class="c++">char str[ ] = &quot;hello world&quot;  cout&lt;&lt;str&lt;&lt;endl;    </code></pre>
+<h4 id="nbsp-nbsp-2-string-变量名-”字符串值”-（引用头文件include“string”-有的是在iostream头文件中）"><a href="#nbsp-nbsp-2-string-变量名-”字符串值”-（引用头文件include“string”-有的是在iostream头文件中）" class="headerlink" title="&nbsp;&nbsp;(2) string 变量名 =”字符串值” （引用头文件include“string”   有的是在iostream头文件中）"></a>&nbsp;&nbsp;(2) string 变量名 =”字符串值” （引用头文件include“string”   有的是在iostream头文件中）</h4><pre><code class="c++">string name[3] = {&quot;张三&quot;,&quot;李四&quot;,&quot;王麻子&quot;}; string name=”胖虎”；</code></pre>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h4><pre><code class="c++">int a1 = 10; ++a1*10; //(运算结果为110)先加1后乘以10，
+int a1 =10; a1++*10;   //(运算结果为101)先乘以10 后加1，先执行表达式，再增加</code></pre>
+<h4 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h4><pre><code class="c++">-=  /=  %=  
+int a=10; int b=5; cout&lt;&lt;(a==b); //输出结果为0(假)</code></pre>
+<h4 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h4><pre><code class="c++">rand() % 80; //生成0-79的随机数   
+rand() % 80+1; // 生成0-80随机数  
+/* 需要包含头文件 #include “cstdlib” */
+//   #include ”ctime“ (伪函数)  srand((unsigned int)time(NULL));  利用系统时钟生成伪数字</code></pre>
+<h4 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h4><pre><code class="c++">int a = 10; int b = 20;  (a&lt;b?a:b)=100;   cout &lt;&lt;a; a=100 cout&lt;&lt;b;  //b=2</code></pre>
+<h4 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h4><pre><code class="c++">int a = 354; //个位   a%10  十位   a%100/10  百位  a/100</code></pre>
+<h4 id="11"><a href="#11" class="headerlink" title="11."></a>11.</h4><pre><code class="c++"> \t   制表符代替空格</code></pre>
+<h4 id="12"><a href="#12" class="headerlink" title="12."></a>12.</h4><pre><code class="c++">goto   flag ；  flag：   //跳转语句 ---读懂就可，不建议使用</code></pre>
+<h4 id="13"><a href="#13" class="headerlink" title="13."></a>13.</h4><pre><code class="c++">/*数组*/   int arr[5] = {1,2,3,4,5} 
+/*每个数组占用的内存空间*/  sizeof(arr)
+/*每个素占用的内存空间 */   sizeof(arr[0]),
+/*数组中元素个数为*/       sizeof(arr) / sizeof(arr[0]) //------重点</code></pre>
+<h4 id="14"><a href="#14" class="headerlink" title="14."></a>14.</h4><pre><code class="c++">/*数组地址 */       int arr[5] = {1,2,3,4,5} 
+/*数组首整型地址*/    cout&lt;&lt; (int)arr;  
+/*第一个元素整型地址*/ cout&lt;&lt;(int)&amp;arr[0];    //------重点</code></pre>
+<h4 id="15-冒泡排序法"><a href="#15-冒泡排序法" class="headerlink" title="15.冒泡排序法"></a>15.冒泡排序法</h4><pre><code class="c++">void fun(int c[], int d)
+{
+    int temp=0;
+    for (int a = 0; a &lt; d - 1; a++)
+    {
+        for (int b = 0; b &lt; d - 1 - a; b++)
+        {
+            if (c[b] &lt;c[b + 1])
+            {
+                temp = c[b];
+                c[b] = c[b + 1];
+                c[b + 1] = temp;
+            }
+        }
+    }
+}</code></pre>
+<hr>
+<h4 id="未完待续…"><a href="#未完待续…" class="headerlink" title="未完待续…"></a>未完待续…</h4>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/438900437.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://link.hhtjim.com/163/438900437.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci='6ad24f2be059b1d2fb20'
+        data-cs='ee483db219a5b74594455a4ad59c2a81ed2b6717'
+        data-r='hao-brother.github.io'
+        data-o='hao-brother'
+        data-a='hao-brother'
+        data-d='true'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
