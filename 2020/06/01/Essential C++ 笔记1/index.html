@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Essential C++ 笔记1 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="Stanley B.Lippman时隔多年所写的轻量级C++，为C++初学者铺的红地毯。侯捷老师翻译，以此做笔记，方便日后回忆。第一章1. Class (类) 用户自定义数据类型2. 输入/输出库 ,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Essential C++ 笔记1</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Essential C++ 笔记1</h1>
+        <div class="stuff">
+            <span>六月 01, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h4 id="Stanley-B-Lippman时隔多年所写的轻量级C-，为C-初学者铺的红地毯。侯捷老师翻译，以此做笔记，方便日后回忆。"><a href="#Stanley-B-Lippman时隔多年所写的轻量级C-，为C-初学者铺的红地毯。侯捷老师翻译，以此做笔记，方便日后回忆。" class="headerlink" title="Stanley B.Lippman时隔多年所写的轻量级C++，为C++初学者铺的红地毯。侯捷老师翻译，以此做笔记，方便日后回忆。"></a>Stanley B.Lippman时隔多年所写的轻量级C++，为C++初学者铺的红地毯。侯捷老师翻译，以此做笔记，方便日后回忆。</h4><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><h4 id="1-Class-类-用户自定义数据类型"><a href="#1-Class-类-用户自定义数据类型" class="headerlink" title="1. Class (类) 用户自定义数据类型"></a>1. Class (类) 用户自定义数据类型</h4><h4 id="2-输入-输出库-，名叫iostream-包含整套的Class"><a href="#2-输入-输出库-，名叫iostream-包含整套的Class" class="headerlink" title="2. 输入/输出库 ，名叫iostream ,包含整套的Class"></a>2. 输入/输出库 ，名叫iostream ,包含整套的Class</h4><h4 id="3-string-Class-用于定义-string-user-name-并且属于声明，要包含-string-Class-的头文件-include-“string”"><a href="#3-string-Class-用于定义-string-user-name-并且属于声明，要包含-string-Class-的头文件-include-“string”" class="headerlink" title="3. string Class 用于定义 string user_name  ,  并且属于声明，要包含 string Class 的头文件  #include “string”"></a>3. string Class 用于定义 string user_name  ,  并且属于声明，要包含 string Class 的头文件  #include “string”</h4><h4 id="4-std-是标准库所驻命名空间-namespace-的名称"><a href="#4-std-是标准库所驻命名空间-namespace-的名称" class="headerlink" title="4. std 是标准库所驻命名空间 (namespace) 的名称"></a>4. std 是标准库所驻命名空间 (namespace) 的名称</h4><h4 id="5-使用命名空间，避免和应用程序发生命名冲突的问题-具有相同的名字"><a href="#5-使用命名空间，避免和应用程序发生命名冲突的问题-具有相同的名字" class="headerlink" title="5. 使用命名空间，避免和应用程序发生命名冲突的问题 (具有相同的名字)"></a>5. 使用命名空间，避免和应用程序发生命名冲突的问题 (具有相同的名字)</h4><h4 id="6-在程序中使用-string-Class-及-cin-、cout-的-iostream-类对象，不仅包含-string-、iostream-的头文件，还得让命名空间-std-内的名称曝光-——using-namespace-std-（最简单曝光的方法）"><a href="#6-在程序中使用-string-Class-及-cin-、cout-的-iostream-类对象，不仅包含-string-、iostream-的头文件，还得让命名空间-std-内的名称曝光-——using-namespace-std-（最简单曝光的方法）" class="headerlink" title="6. 在程序中使用 string Class 及 cin 、cout 的 iostream 类对象，不仅包含 string 、iostream 的头文件，还得让命名空间 std 内的名称曝光 ——using namespace std;（最简单曝光的方法）"></a>6. 在程序中使用 string Class 及 cin 、cout 的 iostream 类对象，不仅包含 string 、iostream 的头文件，还得让命名空间 std 内的名称曝光 ——using namespace std;（最简单曝光的方法）</h4><h4 id="7-bool-值为-true-false"><a href="#7-bool-值为-true-false" class="headerlink" title="7. bool 值为 true / false"></a>7. bool 值为 true / false</h4><h4 id="8-被定义为-const-对象后，获得初值后，无法再改变"><a href="#8-被定义为-const-对象后，获得初值后，无法再改变" class="headerlink" title="8. 被定义为 const 对象后，获得初值后，无法再改变"></a>8. 被定义为 const 对象后，获得初值后，无法再改变</h4><h4 id="9-数组-Array-与-Vector-容器"><a href="#9-数组-Array-与-Vector-容器" class="headerlink" title="9. 数组 Array 与 Vector 容器"></a>9. 数组 Array 与 Vector 容器</h4><pre><code class="c++">    int pell [18] ;  
+    vector &lt;int&gt; seq(18);</code></pre>
+<h4 id="10-容器第一个元素位置为0"><a href="#10-容器第一个元素位置为0" class="headerlink" title="10. 容器第一个元素位置为0"></a>10. 容器第一个元素位置为0</h4><h4 id="11-数组-Array-与-Vector-容器的区别"><a href="#11-数组-Array-与-Vector-容器的区别" class="headerlink" title="11. 数组 Array 与 Vector 容器的区别"></a>11. 数组 Array 与 Vector 容器的区别</h4><pre><code class="c++">1. 
+//容器定义、初始化必有大小，而数组可没有，例如 int pell []={1,2 ,3};
+2.
+    Vector &lt;int&gt; *addrs[1]={&amp;a};
+// 元素类型为 vector&lt;int&gt; *
+//    addrs[0] 值为 a的地址</code></pre>
+<h4 id="12-Vector-初始化的两种方式"><a href="#12-Vector-初始化的两种方式" class="headerlink" title="12. Vector 初始化的两种方式"></a>12. Vector 初始化的两种方式</h4><pre><code class="c++">1.
+    vector &lt;int&gt; seq(2);
+    seq[0]=1; seq[1]=2;
+2.
+    //利用已初始化的Array 作为该Vector容器的初值 ------重要
+    int vals[5]={0,1,2,3,4};
+    vector &lt;int&gt; seq(vals,vals+5);</code></pre>
+<h4 id="13-Vector的特点"><a href="#13-Vector的特点" class="headerlink" title="13. Vector的特点"></a>13. Vector的特点</h4><h4 id="Vector容器知道自己的大小"><a href="#Vector容器知道自己的大小" class="headerlink" title="Vector容器知道自己的大小"></a>Vector容器知道自己的大小</h4><pre><code class="c++">int a = seq.size(); //a中储存的就是vector &lt;int&gt; seq(2)的数据个数（为2）  seq.size()会返回该容器的大小</code></pre>
+<h4 id="14-指针内含某特定类型对象的内存地址"><a href="#14-指针内含某特定类型对象的内存地址" class="headerlink" title="14. 指针内含某特定类型对象的内存地址"></a>14. 指针内含某特定类型对象的内存地址</h4><pre><code class="c++">int *pi;  // pi 是个int 类型的对象
+int *pi= &amp; inval;  // pi储存的是inval的内存地址</code></pre>
+<hr>
+<h4 id="未完待续…"><a href="#未完待续…" class="headerlink" title="未完待续…"></a>未完待续…</h4>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/438900437.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://link.hhtjim.com/163/438900437.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci='6ad24f2be059b1d2fb20'
+        data-cs='ee483db219a5b74594455a4ad59c2a81ed2b6717'
+        data-r='hao-brother.github.io'
+        data-o='hao-brother'
+        data-a='hao-brother'
+        data-d='true'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
