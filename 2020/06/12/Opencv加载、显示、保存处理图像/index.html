@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>opcv第一讲 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="1. 加载图像（cv::imread）Mat src = imread(&amp;quot;D:/c++练习/opencv/可删/1.jpg&amp;quot;);
+imread  的功能是加载图像文件成为一个 M,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">opcv第一讲</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">opcv第一讲</h1>
+        <div class="stuff">
+            <span>六月 12, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h4 id="1-加载图像（cv-imread）"><a href="#1-加载图像（cv-imread）" class="headerlink" title="1. 加载图像（cv::imread）"></a>1. 加载图像（cv::imread）</h4><pre><code class="c++">Mat src = imread(&quot;D:/c++练习/opencv/可删/1.jpg&quot;);</code></pre>
+<h5 id="imread-的功能是加载图像文件成为一个-Mat-对象"><a href="#imread-的功能是加载图像文件成为一个-Mat-对象" class="headerlink" title="imread  的功能是加载图像文件成为一个 Mat 对象"></a>imread  的功能是加载图像文件成为一个 Mat 对象</h5><h5 id="其中第一个参数表示图像文件名称"><a href="#其中第一个参数表示图像文件名称" class="headerlink" title="其中第一个参数表示图像文件名称"></a>其中第一个参数表示图像文件名称</h5><h5 id="第二个参数，表示加载的图像是什么类型，支持常见的三个参数值如下所示："><a href="#第二个参数，表示加载的图像是什么类型，支持常见的三个参数值如下所示：" class="headerlink" title="第二个参数，表示加载的图像是什么类型，支持常见的三个参数值如下所示："></a>第二个参数，表示加载的图像是什么类型，支持常见的三个参数值如下所示：</h5><pre><code class="c++">Mat src = imread(&quot;D:/c++练习/opencv/可删/1.jpg&quot;,IMREAD_GRAYSCALE);  
+// IMREAD_GRAYSCALE  加载出灰色照片
+
+// IMREAD_UNCHANGED (&lt;0) 表示加载原图，不做任何改变
+
+// IMREAD_GRAYSCALE ( 0)表示把原图作为灰度图像加载进来
+
+// IMREAD_COLOR (&gt;0) 表示把原图作为RGB图像加载进来
+
+// 注意：OpenCV支持JPG、PNG、TIFF、RGB等常见格式图像文件加载</code></pre>
+<h4 id="2-显示图像-cv-namedWindos-cv-imshow"><a href="#2-显示图像-cv-namedWindos-cv-imshow" class="headerlink" title="2. 显示图像 (cv::namedWindos  /  cv::imshow)"></a>2. 显示图像 (cv::namedWindos  /  cv::imshow)</h4><h5 id="（1）-namedWindos的功能是创建一个OpenCV窗口，它是由OpenCV自动创建与释放，你无需取销毁它。"><a href="#（1）-namedWindos的功能是创建一个OpenCV窗口，它是由OpenCV自动创建与释放，你无需取销毁它。" class="headerlink" title="（1）. namedWindos的功能是创建一个OpenCV窗口，它是由OpenCV自动创建与释放，你无需取销毁它。"></a>（1）. namedWindos的功能是创建一个OpenCV窗口，它是由OpenCV自动创建与释放，你无需取销毁它。</h5><h5 id="常见用法如下"><a href="#常见用法如下" class="headerlink" title="常见用法如下"></a>常见用法如下</h5><pre><code class="c++">namedWindow(&quot;Window Title&quot;, WINDOW_AUTOSIZE)</code></pre>
+<h5 id="WINDOW-AUTOSIZE-会自动根据图像大小，显示窗口大小，不能人为改变窗口大小"><a href="#WINDOW-AUTOSIZE-会自动根据图像大小，显示窗口大小，不能人为改变窗口大小" class="headerlink" title="WINDOW_AUTOSIZE  会自动根据图像大小，显示窗口大小，不能人为改变窗口大小"></a>WINDOW_AUTOSIZE  会自动根据图像大小，显示窗口大小，不能人为改变窗口大小</h5><h5 id="WINDOW-NORMAL-跟QT集成的时候会使用，允许修改窗口大小"><a href="#WINDOW-NORMAL-跟QT集成的时候会使用，允许修改窗口大小" class="headerlink" title="WINDOW_NORMAL   跟QT集成的时候会使用，允许修改窗口大小"></a>WINDOW_NORMAL   跟QT集成的时候会使用，允许修改窗口大小</h5><pre><code class="c++">namedWindow(&quot;test opencv setup&quot;,CV_WINDOW_AUTOSIZE);
+//  test opencv setup 窗口名称可以自己修改定义</code></pre>
+<h5 id="（2）-imshow根据窗口名称显示图像到指定的窗口上去，第一个参数是窗口名称，第二参数是Mat对象"><a href="#（2）-imshow根据窗口名称显示图像到指定的窗口上去，第一个参数是窗口名称，第二参数是Mat对象" class="headerlink" title="（2）. imshow根据窗口名称显示图像到指定的窗口上去，第一个参数是窗口名称，第二参数是Mat对象"></a>（2）. imshow根据窗口名称显示图像到指定的窗口上去，第一个参数是窗口名称，第二参数是Mat对象</h5><pre><code class="c++">Mat src = imread(&quot;D:/c++练习/opencv/可删/1.jpg&quot;,IMREAD_GRAYSCALE);
+
+imshow(&quot;test opencv setup&quot;, src);  
+// test opencv setup 窗口名称可以自己修改定义</code></pre>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9naXRlZS5jb20vdHdvX2Zpbmdlcl9tZWRpdGF0aW9uL2JlZC9yYXcvbWFzdGVyL2ltZy8xLTEucG5n?x-oss-process=image/format,png" alt=""></p>
+<h4 id="3-修改图像-cv-cvtColor"><a href="#3-修改图像-cv-cvtColor" class="headerlink" title="3. 修改图像 (cv::cvtColor)"></a>3. 修改图像 (cv::cvtColor)</h4><h4 id="cvtColor的功能是把图像从一个彩色空间转换到另外一个色彩空间，有三个参数，第一个参数表示源图像、第二参数表示色彩空间转换之后的图像、第三个参数表示源和目标色彩空间如：COLOR-BGR2HLS-、COLOR-BGR2GRAY-等"><a href="#cvtColor的功能是把图像从一个彩色空间转换到另外一个色彩空间，有三个参数，第一个参数表示源图像、第二参数表示色彩空间转换之后的图像、第三个参数表示源和目标色彩空间如：COLOR-BGR2HLS-、COLOR-BGR2GRAY-等" class="headerlink" title="cvtColor的功能是把图像从一个彩色空间转换到另外一个色彩空间，有三个参数，第一个参数表示源图像、第二参数表示色彩空间转换之后的图像、第三个参数表示源和目标色彩空间如：COLOR_BGR2HLS 、COLOR_BGR2GRAY 等"></a>cvtColor的功能是把图像从一个彩色空间转换到另外一个色彩空间，有三个参数，第一个参数表示源图像、第二参数表示色彩空间转换之后的图像、第三个参数表示源和目标色彩空间如：COLOR_BGR2HLS 、COLOR_BGR2GRAY 等</h4><pre><code class="c++">    Mat src = imread(&quot;D:/c++练习/opencv/可删/1.jpg&quot;,UNDERFLOW);// 原图
+    imshow(&quot;123&quot;, src);  //123 窗口名称可以自己修改定义,显示src
+
+    Mat output_image;
+    cvtColor(src, output_image, COLOR_BGR2HLS);
+     // 新图名为 output_image, 转换新图到 COLOR_BGR2HLS 色彩空间
+    imshow(&quot;111&quot;, output_image); // 显示output_image的新图，窗口名字为111</code></pre>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9naXRlZS5jb20vdHdvX2Zpbmdlcl9tZWRpdGF0aW9uL2JlZC9yYXcvbWFzdGVyL2ltZy8xNC0yLnBuZw?x-oss-process=image/format,png" alt=""></p>
+<h5 id="4-保存图像-cv-imwrite"><a href="#4-保存图像-cv-imwrite" class="headerlink" title="(4).  保存图像 cv::imwrite"></a>(4).  保存图像 cv::imwrite</h5><h5 id="保存图像文件到指定目录路径"><a href="#保存图像文件到指定目录路径" class="headerlink" title="保存图像文件到指定目录路径"></a>保存图像文件到指定目录路径</h5><h5 id="只有8位、16位的PNG、JPG、Tiff文件格式而且是单通道或者三通道的BGR的图像才可以通过这种方式保存"><a href="#只有8位、16位的PNG、JPG、Tiff文件格式而且是单通道或者三通道的BGR的图像才可以通过这种方式保存" class="headerlink" title="只有8位、16位的PNG、JPG、Tiff文件格式而且是单通道或者三通道的BGR的图像才可以通过这种方式保存"></a>只有8位、16位的PNG、JPG、Tiff文件格式而且是单通道或者三通道的BGR的图像才可以通过这种方式保存</h5><h5 id="保存PNG格式的时候可以保存透明通道的图片"><a href="#保存PNG格式的时候可以保存透明通道的图片" class="headerlink" title="保存PNG格式的时候可以保存透明通道的图片"></a>保存PNG格式的时候可以保存透明通道的图片</h5><h5 id="可以指定压缩参数"><a href="#可以指定压缩参数" class="headerlink" title="可以指定压缩参数"></a>可以指定压缩参数</h5><pre><code class="c++">imwrite(&quot;D:/new.jpg&quot;, output_image); 
+//将output_image的副本放在D盘，并且命新的名字为 new.jpg</code></pre>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9naXRlZS5jb20vdHdvX2Zpbmdlcl9tZWRpdGF0aW9uL2JlZC9yYXcvbWFzdGVyL2ltZy8xLTMucG5n?x-oss-process=image/format,png" alt=""></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/438900437.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://link.hhtjim.com/163/438900437.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci='6ad24f2be059b1d2fb20'
+        data-cs='ee483db219a5b74594455a4ad59c2a81ed2b6717'
+        data-r='hao-brother.github.io'
+        data-o='hao-brother'
+        data-a='hao-brother'
+        data-d='true'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
