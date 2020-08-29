@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>c与c++知识点(一) - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="1
+print(&amp;quot;www&amp;quot;,&amp;quot;baidu&amp;quot;,&amp;quot;com&amp;quot;)   #输出 www  baidu  com
+
+print(&amp;quot;www&amp;q,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">c与c++知识点(一)</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">c与c++知识点(一)</h1>
+        <div class="stuff">
+            <span>八月 29, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>1</p>
+<pre><code class="python">print(&quot;www&quot;,&quot;baidu&quot;,&quot;com&quot;)   #输出 www  baidu  com
+
+print(&quot;www&quot;,&quot;baidu&quot;,&quot;com&quot;,sep=&quot;.&quot;)  #用点代替空格  输出www.baidu.com</code></pre>
+<p>2</p>
+<p>强制类型转换</p>
+<pre><code class="python">c = int(input(&quot;shuru:&quot;))       #注意input 默认输入为str(字符型)
+print(&quot;shuruyigeshuzi:%d&quot;%c)   #输出整型数字</code></pre>
+<p>3</p>
+<p>成员运算符  </p>
+<pre><code class="python">in   #在序列中找到，返回True,否则返回False
+
+not in  #没有在序列中找到返回True,否则返回False</code></pre>
+<p>4</p>
+<p>身份运算符</p>
+<pre><code class="python">is  #判断两个标识符是不是引用一个对象，是为True,否为False
+
+is not  #判断两个标识符是不是引用不同对象，是为True,否为False</code></pre>
+<p>5</p>
+<p>随机数</p>
+<pre><code class="python">import  random
+
+x = random.randint(0,2)  #随机生成[0-2]的随机数，包含0，1，2
+
+print(x)</code></pre>
+<p>6</p>
+<p>for循环</p>
+<p>​    (1)</p>
+<pre><code class="python">for i in range(5):
+    print(i)    #打印出 0    1    2    3    4    一共循环了五次</code></pre>
+<p>​    (2)</p>
+<pre><code class="python">for i in range(0,10,3):
+
+    print(i)    #打印出 0    3    6    9    从0到10，每次增加3，然后打印出来</code></pre>
+<pre><code class="python">name = &quot;chengdu&quot;
+for x in name:
+    print(x,end=&quot;\t&quot;)    #打印结果 c    h    e    n    g    d    u        </code></pre>
+<pre><code class="python">a = [&quot;aa&quot;,&quot;bb&quot;,&quot;cc&quot;,&quot;dd&quot;]
+for i in range(len(a)):        # len(a)=4  长度
+    print(i,a[i])    
+&quot;&quot;&quot;打印结果如下
+0 aa
+1 bb
+2 cc
+3 dd
+&quot;&quot;&quot; </code></pre>
+<p>7</p>
+<p>while</p>
+<pre><code class="python">i = 0
+while i &lt; 3:
+    print(&quot;第%d执行&quot;%(i+1))
+    print(&quot;i=%d&quot;%i)
+    i += 1
+&quot;&quot;&quot;打印结果如下
+第1次执行
+i=0
+第2次执行
+i=1
+第3次执行
+i=2
+&quot;&quot;&quot;    </code></pre>
+<p>8</p>
+<p>break    continue    pass</p>
+<pre><code class="python">break:    #语句可以直接跳出for和while循环体    
+i = 0
+while i&lt;10:
+    i += 1
+    print(&quot;-&quot;*30)
+    if i==3:
+        break
+    print(i)
+&quot;&quot;&quot;打印结果如下
+------------------------------
+1
+------------------------------
+2
+------------------------------
+&quot;&quot;&quot;    </code></pre>
+<pre><code class="python">continue:    #语句跳出当前循环，进入下一轮循环
+    i = 0
+while i&lt;4:
+    i += 1
+    print(&quot;-&quot;*30)
+    if i==2:
+        continue
+    print(i)
+&quot;&quot;&quot;打印结果如下
+------------------------------
+1
+------------------------------
+------------------------------
+3
+------------------------------
+4
+&quot;&quot;&quot;</code></pre>
+<pre><code class="python">pass:    #空语句，用于占位语句，不做事情</code></pre>
+<pre><code class="python">#九九乘法表
+for a in range(1,10,1):
+    for b in range(1,a+1,1):
+        print(end=&quot;%d*%d=%d\t&quot;%(b,a,a*b))
+    print(&quot;\n&quot;)</code></pre>
+<p>9</p>
+<p>字符串</p>
+<pre><code class="python">my = &quot;I&#39;m student&quot;
+print(my)
+#打印结果    I&#39;m student
+
+word = &quot;&quot;&quot;
+hello world 
+hobby
+&quot;&quot;&quot;
+print(word)
+
+&quot;&quot;&quot;打印结果
+hello world 
+hobby
+&quot;&quot;&quot;</code></pre>
+<p>特殊注意几个字符</p>
+<pre><code class="python">&quot;&quot;&quot;
+转义字符    描述        
+\\         反斜杠符号
+\&#39;           单引号
+\&#39;&#39;        双引号
+\n           换行
+\t            横向制表符
+&quot;&quot;&quot;</code></pre>
+<p>截取字符串</p>
+<pre><code class="python">str = &quot;chengdu&quot;
+print(str)         #输出   chengdu
+print(str[0])      #输出   c
+print(str[0:5])   #输出   cheng   
+print(str[1:7:2]) #输出   hnd        [起始位置:终止位置:步进值]
+print(str[:5])    #输出   cheng
+print(str[5:])    #输出   du
+print(&quot;hello &quot; + str)  #输出     hello chengdu
+print(&quot;hello\nchengdu&quot;)#输出    hello(换行)chengdu
+print(r&quot;hello\nchengdu&quot;)#输出    hellochengdu
+#  加一个r  表示直接显示，不进行转义</code></pre>
+<p>10</p>
+<p>列表</p>
+<pre><code class="python">#  列表类似于数组(列表中可以存储混合类型)
+namelist = [&quot;zhangsan&quot;,&quot;lisi&quot;,102]
+print(namelist[0])    #输出     zhangsan
+print(namelist[2])    #输出     102
+print(type(namelist[0]))    #输出        &lt;class &#39;str&#39;&gt;
+print(type(namelist[2]))    #输出        &lt;class &#39;int&#39;&gt;
+</code></pre>
+<pre><code class="python">#    for遍历
+namelist = [&quot;zhangsan&quot;,&quot;lisi&quot;,102]
+for name in namelist:
+    print(name)
+&quot;&quot;&quot;
+zhangsan    
+lisi    
+102   
+&quot;&quot;&quot;</code></pre>
+<pre><code class="python">#    while遍历
+namelist = [&quot;zhangsan&quot;,&quot;lisi&quot;,102]
+i = 0
+while i &lt; len(namelist):
+    print(namelist[i])
+    i += 1</code></pre>
+<pre><code class="python">#    列表具有切片  list1[2:5:2] [起始位置:终止位置:步进值]</code></pre>
+<p>增</p>
+<pre><code class="python">#    增1 append (在列表末尾添加新的成员)
+namelist = [&quot;zhangsan&quot;]
+nametemp = input(&quot;write new name:&quot;)
+namelist.append(nametemp)
+for a in namelist:
+    print(a)
+&quot;&quot;&quot;
+write new name:lisi
+zhangsan
+lisi
+&quot;&quot;&quot;
+
+#    增2 extend (在列表末尾逐一合并增加新的成员)
+a = [1,2]
+b = [3,4]
+a.extend(b)
+print(a)    #  输出结果 [1, 2, 3, 4]
+
+#    增3 insert    指定下标位置前插入元素
+a = [0,1,2]
+a.insert(1,3)  #第一个变量表示下标和，第二个表示元素(对象)
+print(a)       #输出结果  [0 3 1 2]</code></pre>
+<p>删</p>
+<pre><code class="python">#    删1 del 指定下标(位置)删除元素
+namelist = [&quot;zhangsan&quot;,&quot;lisi&quot;,&quot;wangwu&quot;]
+del namelist[2]
+print(namelist)
+&quot;&quot;&quot;
+[&#39;zhangsan&#39;, &#39;lisi&#39;, &#39;wangwu&#39;]
+[&#39;zhangsan&#39;, &#39;lisi&#39;]
+&quot;&quot;&quot;
+
+#    删2 pop 删除列表最后一个元素
+namelist = [&quot;zhangsan&quot;,&quot;lisi&quot;,&quot;wangwu&quot;]
+namelist.pop()
+print(namelist)
+&quot;&quot;&quot;
+[&#39;zhangsan&#39;, &#39;lisi&#39;]
+&quot;&quot;&quot;
+
+#    删3 remove 删除指定位置(若有重复数据，只删除第一个数据)
+namelist = [&quot;zhangsan&quot;,&quot;lisi&quot;,&quot;wangwu&quot;]
+namelist.remove(&quot;lisi&quot;)
+print(namelist)
+&quot;&quot;&quot;
+[&#39;zhangsan&#39;, &#39;wangwu&#39;]
+&quot;&quot;&quot;</code></pre>
+<p>改</p>
+<pre><code class="python">#    改 指定下标内容
+namelist = [&quot;zhangsan&quot;,&quot;lisi&quot;,&quot;wangwu&quot;]
+namelist[1] = &quot;xiaoming&quot;   #下标直接修改即可
+print(namelist)
+&quot;&quot;&quot;
+[&#39;zhangsan&#39;, &#39;xiaoming&#39;, &#39;wangwu&#39;]
+&quot;&quot;&quot;</code></pre>
+<p>查</p>
+<pre><code class="python">#    查 在或者不在
+namelist = [&quot;zhangsan&quot;,&quot;lisi&quot;,&quot;wangwu&quot;]
+findname = input(&quot;write that whate student do you want?&quot;)
+if findname in namelist:
+    print(findname + &quot;had been find&quot; )
+else:
+    print(findname + &quot;had been not find&quot; )
+&quot;&quot;&quot;
+write that whate student do you want? zhangsan
+zhangsan had been find
+&quot;&quot;&quot;    </code></pre>
+<p>11</p>
+<p>元组</p>
+<p>列表属于可变序列,它的元素可以随时修改或者删除,而元组属于不可变序列,其中的元素是不能修改的,除非整体重新赋值。</p>
+<p>定义元组</p>
+<pre><code class="python">&quot;&quot;&quot;
+无数值空元组时: tup = ()
+一个数值元组时: tup = (20,)  #  必须要加逗号
+多个数值元组时: tup = (10，20，30)
+&quot;&quot;&quot;</code></pre>
+<p>增：相当于创建了新的元组</p>
+<pre><code class="python">tup1 = (&quot;abc&quot;,30,9)
+tup2=(&quot;gh&quot;,50)
+
+tup = tup1 + tup2
+print(tup)    # 运行结果  (&#39;abc&#39;, 30, 9, &#39;gh&#39;, 50)</code></pre>
+<p>删：不允许删除某个具体的值，删除的是整个变量</p>
+<pre><code class="python">tup1 = (&quot;abc&quot;,30,9)
+print(tup1)
+del tup1
+print(tup1)   #报错 找不到tup1,该变量已经被彻底删除了</code></pre>
+<p>改：不能修改</p>
+<pre><code class="python">tup1 = (&quot;abc&quot;,30,9)
+
+tup1[1] = 50  #        报错</code></pre>
+<p>查：用列表的查看方法即可</p>
+<pre><code class="python">tup2=(&quot;gh&quot;,50,6,23,4,8)
+print(tup2[1:5:2])  #  (50, 23)</code></pre>
+<p>12</p>
+<p>字典(dict)</p>
+<p>(1)字典是无序的对象集合，使用键-值存储</p>
+<p>(2)键必须使用不可变类型，值可以一样</p>
+<p>(3)同一个字典中，键必须是唯一的</p>
+<p>定义</p>
+<pre><code class="python">inf = {&quot;name&quot;:&quot;zhangsan&quot;,&quot;age&quot;:18}
+print(inf[&quot;age&quot;])  #  输出结果 18
+
+#访问不存在的键
+inf = {&quot;name&quot;:&quot;zhangsan&quot;,&quot;age&quot;:18}
+print(inf.get(&quot;shengao&quot;))    # 输出结果  None  (默认返回 None)
+print(inf.get(&quot;shengao&quot;,&quot;mec&quot;)) # 输出结果  mec  (修改默认值返回 mec)</code></pre>
+<p>增</p>
+<pre><code class="python">student = {&quot;name&quot;:&quot;zhangsan&quot;,&quot;age&quot;:18}
+newid = input(&quot;write new id: &quot;)
+student[&quot;id&quot;] = newid
+print(student[&quot;id&quot;])  
+&quot;&quot;&quot;
+write new id: 86
+86
+&quot;&quot;&quot;</code></pre>
+<p>删</p>
+<pre><code class="python">#(1) del
+student = {&quot;name&quot;:&quot;lisi&quot;,&quot;age&quot;:18}
+del student[&quot;name&quot;]
+print(&quot;change after: %s&quot;%student[&quot;name&quot;]) #报错 因为删除了是键值对(&quot;name&quot;:&quot;lisi&quot;)
+
+student = {&quot;name&quot;:&quot;lisi&quot;,&quot;age&quot;:18}
+del student
+print(student)  #  报错 删除了字典
+
+#(2) clear
+student = {&quot;name&quot;:&quot;zhangsan&quot;,&quot;age&quot;:18}
+student.clear()
+print(student)  # 输出结果 {}</code></pre>
+<p>改</p>
+<pre><code class="python">student = {&quot;name&quot;:&quot;zhangsan&quot;,&quot;age&quot;:18}
+student[&quot;age&quot;] = 20
+print(student[&quot;age&quot;])   # 输出结果 20</code></pre>
+<p>查</p>
+<pre><code class="python">student = {&quot;name&quot;:&quot;zhangsan&quot;,&quot;age&quot;:18,&quot;id&quot;:1}
+print(student.keys()) 
+print(student.values())
+print(student.items())
+&quot;&quot;&quot;
+dict_keys([&#39;name&#39;, &#39;age&#39;, &#39;id&#39;])  #得到所有的键 是列表形式
+dict_values([&#39;zhangsan&#39;, 18, 1])  #得到所有的值 是列表形式
+dict_items([(&#39;name&#39;, &#39;zhangsan&#39;), (&#39;age&#39;, 18), (&#39;id&#39;, 1)]) 
+#得到的是所有的项(元组)，每个键值对是一个元组
+&quot;&quot;&quot;
+
+#遍历所有的键
+student = {&quot;name&quot;:&quot;zhangsan&quot;,&quot;age&quot;:18,&quot;id&quot;:1}
+for key in student.keys():
+    print(key)
+&quot;&quot;&quot;
+name
+age
+id
+&quot;&quot;&quot;
+
+#遍历所有的值
+student = {&quot;name&quot;:&quot;zhangsan&quot;,&quot;age&quot;:18,&quot;id&quot;:1}
+for value in student.values():
+    print(value)
+&quot;&quot;&quot;
+zhangsan
+18
+1
+&quot;&quot;&quot;
+
+#遍历所有的键值对
+student = {&quot;name&quot;:&quot;zhangsan&quot;,&quot;age&quot;:18,&quot;id&quot;:1}
+for key,value in student.items():
+    print(&quot;key = %s,value = %s&quot;%(key,value))
+&quot;&quot;&quot;
+key = name,value = zhangsan
+key = age,value = 18
+key = id,value = 1
+&quot;&quot;&quot;
+
+# 使用枚举函数(enumerate)，同时得到列表的下标和元素内容
+mylist = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,66]
+for i,x in enumerate(mylist):
+    print(i+1,x)
+&quot;&quot;&quot;
+1 a
+2 b
+3 c
+4 66
+&quot;&quot;&quot;    </code></pre>
+<p>13</p>
+<p>函数</p>
+<p>定义</p>
+<pre><code class="python">def 函数名():
+    代码</code></pre>
+<pre><code class="python"># 可以返回多个值
+def dvd(a,b):
+    return a/b,a%b
+print(dvd(5,2))  # 运行结果(2.5,1)
+
+def a1():
+    print(&quot;-&quot;*15)
+
+def write(numb):
+    x = 0
+    while x &lt; numb:
+        a1()
+        x += 1
+nua = int(input(&quot;the nub do you want: &quot;))  #input默认为str类型
+print(type(nua))
+write(nua)
+&quot;&quot;&quot;
+the nub do you want: 2
+&lt;class &#39;int&#39;&gt;
+---------------
+---------------
+&quot;&quot;&quot;</code></pre>
+<p>14</p>
+<p>文件操作</p>
+<p>打开/关闭(open/close)</p>
+<pre><code class="python">f = open(&quot;test.txt&quot;,&quot;w&quot;)  # w为写入模式，如果没有test.txt自动创建一个
+f.close()  #关闭</code></pre>
+<pre><code class="python">r    :以读打开文件，若没有文件，就报错(默认模式)
+w    :以写打开文件，若没有文件，就自动创建
+rb  :以二进制打开文件用于只读
+wb  :以二进制打开文件用于只写
+
+#  将字符串写入(write)
+f = open(&quot;test.txt&quot;,&quot;w&quot;)
+f.write(&quot;hello world ,i am here&quot;)
+f.close()    
+
+#  读5个字符(read,读完后向后移动)
+f = open(&quot;test.txt&quot;,&quot;r&quot;)
+content=f.read(5)
+print(content)
+content=f.read(5)
+print(content)
+f.close()
+&quot;&quot;&quot;
+hello
+ worl
+&quot;&quot;&quot;
+
+#  读取列表readlines(一次性读取全部列表)
+f = open(&quot;test.txt&quot;,&quot;r&quot;)
+content = f.readlines()
+print(content)
+i = 1
+for temp in content:
+    print(&quot;%d,%s&quot;%(i,temp))
+    i += 1
+f.close()
+&quot;&quot;&quot;
+1,hello world ,i am here
+2,hello world ,i am here
+3,hello world ,i am here
+4,hello world ,i am here
+&quot;&quot;&quot;
+
+#  读取列表readline(一次读取一行列表)
+#  文件重命名os的rename(需要修改的名字，新的名字)
+import os
+os.rename(&quot;test.txt&quot;,&quot;abc.txt&quot;)</code></pre>
+<p>15</p>
+<p>异常处理</p>
+<pre><code class="python">print(&quot;---test---1---&quot;)
+f = open(&quot;123.txt&quot;,&quot;r&quot;)   # 会报错，用只读打开了一个不存在的文件
+print(&quot;---test---2---&quot;)   # 这句代码不会被执行
+
+#捕获所有的异常并且全部打印(Exception,as result)
+try:
+    print(&quot;---test---1---&quot;)
+    f = open(&quot;123.txt&quot;,&quot;r&quot;)
+    print(num)
+except Exception as result:  # Exception包含所有的错误类型
+    print(result) #打印所有的错误类型
+
+
+ try....finally和嵌套，不管如何报错，都会执行文件关闭的程序
+ import time
+try:
+    f = open(&quot;123.txt&quot;,&quot;r&quot;)
+    try:
+        while True:
+            content = f.readline()
+            if len(content) == 0:
+                break
+            time.sleep(2)
+            print(content)
+    finally:                    #无论程序能否执行，此代码一定会被执行的
+        f.close()
+        print(&quot;close wenjian&quot;)
+except Exception as result:
+    print(&quot;had been error&quot;)   
+&quot;&quot;&quot;
+had been error
+&quot;&quot;&quot;    </code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/438900437.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://link.hhtjim.com/163/438900437.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci='6ad24f2be059b1d2fb20'
+        data-cs='ee483db219a5b74594455a4ad59c2a81ed2b6717'
+        data-r='hao-brother.github.io'
+        data-o='hao-brother'
+        data-a='hao-brother'
+        data-d='true'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
